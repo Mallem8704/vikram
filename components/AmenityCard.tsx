@@ -11,6 +11,9 @@ import {
   Shield,
   MapPin,
   WashingMachine,
+  Snowflake,
+  Tv,
+  Users,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Amenity } from "@/types";
@@ -29,6 +32,9 @@ const IconRegistry: Record<string, React.ComponentType<{ className?: string }>> 
   Shield,
   MapPin,
   WashingMachine,
+  Snowflake,
+  Tv,
+  Users,
 };
 
 interface AmenityCardProps {
