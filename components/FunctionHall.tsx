@@ -106,7 +106,7 @@ export default function FunctionHall() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 min-w-[160px] min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gold text-black font-sans font-bold text-sm hover:bg-gold-light hover:-translate-y-0.5 active:scale-[0.98] transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="flex-1 min-w-[160px] min-h-[44px] inline-flex items-center justify-center gap-2 py-3 px-6 rounded-lg bg-gold text-black font-sans font-semibold text-xs tracking-wider uppercase hover:bg-gold-light hover:-translate-y-0.5 active:scale-[0.98] transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   aria-label="Enquire Now about the Function Hall on WhatsApp"
                 >
                   <MessageCircle className="w-4 h-4 text-black" />
@@ -116,10 +116,10 @@ export default function FunctionHall() {
                 {/* Call Hotel Contact */}
                 <a
                   href={`tel:${hotel.contact.phone[0]}`}
-                  className="min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl border border-white/20 text-ivory hover:text-gold hover:border-gold hover:-translate-y-0.5 active:scale-[0.98] font-sans font-semibold text-sm hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-2 py-3 px-5 rounded-lg border border-white/20 text-ivory hover:text-gold hover:border-gold hover:-translate-y-0.5 active:scale-[0.98] font-sans font-medium text-xs tracking-wider uppercase hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   aria-label="Call Front Desk to enquire about Function Hall"
                 >
-                  <Phone className="w-4 h-4 text-gold" />
+                  <Phone className="w-3.5 h-3.5 text-gold" />
                   <span>Call Hotel</span>
                 </a>
 
@@ -129,7 +129,7 @@ export default function FunctionHall() {
                   className="group w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-1.5 py-3 px-4 text-xs font-sans font-semibold text-ivory/70 hover:text-gold transition-colors"
                 >
                   <span>More Hall Details</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" />
                 </Link>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function FunctionHall() {
 
           {/* Right Column: Premium Event Hall Visual / Photograph Slot */}
           <ScrollReveal delay={0.15} className="lg:col-span-6 relative">
-            <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-black group hover:-translate-y-1 transition-all duration-300">
+            <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] rounded-xl overflow-hidden border border-gold/30 shadow-lg bg-black group hover:-translate-y-1 transition-all duration-300">
               <Image
                 src={hotelImages.functionHall.main}
                 alt={hotelImages.functionHall.alt}
@@ -147,7 +147,7 @@ export default function FunctionHall() {
                 loading="lazy"
               />
 
-              <div className="absolute bottom-4 left-4 right-4 bg-black/85 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 flex items-center justify-between">
+              <div className="absolute bottom-4 left-4 right-4 bg-black/85 backdrop-blur-md border border-white/10 rounded-xl p-3.5 flex items-center justify-between">
                 <div>
                   <p className="font-serif text-base text-ivory font-semibold">
                     Grand Function Hall

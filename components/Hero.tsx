@@ -115,7 +115,7 @@ export default function Hero() {
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                 transition={{ duration: 0.15 }}
                 onClick={() => openBookingModal()}
-                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gold text-black font-sans font-bold text-sm sm:text-base rounded-xl hover:bg-gold-light transition-colors shadow-gold hover:shadow-gold-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-7 py-3 bg-gold text-black font-sans font-semibold text-xs sm:text-sm tracking-wider uppercase rounded-lg hover:bg-gold-light transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
                 aria-label="Book Your Stay"
               >
                 <CalendarDays className="w-4 h-4 text-black" />
@@ -131,10 +131,10 @@ export default function Hero() {
               >
                 <Link
                   href="/rooms"
-                  className="group w-full min-h-[48px] inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-ivory/30 text-ivory font-sans font-semibold text-sm sm:text-base rounded-xl hover:bg-white/10 hover:border-ivory/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                  className="group w-full min-h-[48px] inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/25 text-ivory font-sans font-medium text-xs sm:text-sm tracking-wider uppercase rounded-lg hover:bg-white/5 hover:border-gold hover:text-gold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                 >
                   <span>Explore Rooms</span>
-                  <ArrowRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform duration-200" />
+                  <ArrowRight className="w-3.5 h-3.5 text-gold group-hover:translate-x-0.5 transition-transform duration-200" />
                 </Link>
               </motion.div>
             </motion.div>

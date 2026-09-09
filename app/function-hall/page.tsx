@@ -108,18 +108,18 @@ export default function FunctionHallPage() {
           </div>
 
           {/* Gold Pricing Badge */}
-          <div className="bg-gold text-black px-6 py-3 rounded-2xl shadow-gold shrink-0 self-start md:self-auto text-right">
-            <p className="font-serif text-3xl sm:text-4xl font-bold leading-none">
+          <div className="bg-gold text-black px-5 py-2.5 rounded-lg shadow-sm shrink-0 self-start md:self-auto text-right">
+            <p className="font-serif text-2xl sm:text-3xl font-bold leading-none">
               ₹20,000
             </p>
-            <p className="text-[11px] font-sans font-semibold uppercase tracking-wider text-black/80 mt-1">
+            <p className="text-[10px] sm:text-[11px] font-sans font-semibold uppercase tracking-wider text-black/80 mt-1">
               per day
             </p>
           </div>
         </div>
 
         {/* ──────────────── 3. Large Event Hall Visual / Photograph ──────────────── */}
-        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-3xl overflow-hidden border border-white/15 bg-black shadow-2xl mb-12">
+        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-xl overflow-hidden border border-white/15 bg-black shadow-xl mb-12">
           <Image
             src={hotelImages.functionHall.main}
             alt="Vikram Bliss Inn Function Hall interior"
@@ -172,9 +172,9 @@ export default function FunctionHallPage() {
                   return (
                     <div
                       key={item.title}
-                      className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-gold/40 transition-colors"
+                      className="flex items-start gap-3.5 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold/40 transition-colors"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-gold/15 border border-gold/30 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-gold/15 border border-gold/30 flex items-center justify-center shrink-0">
                         <Icon className="w-5 h-5 text-gold" />
                       </div>
                       <div>
@@ -192,7 +192,7 @@ export default function FunctionHallPage() {
             </div>
 
             {/* Important Booking Information */}
-            <div className="p-6 sm:p-7 rounded-2xl bg-white/5 border border-white/10">
+            <div className="p-6 sm:p-7 rounded-xl bg-white/5 border border-white/10">
               <div className="flex items-center gap-2.5 mb-4 text-gold">
                 <Info className="w-5 h-5" />
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-ivory">
@@ -223,7 +223,7 @@ export default function FunctionHallPage() {
 
           {/* Right Column (4 of 12): Sticky Enquiry Card */}
           <aside className="lg:col-span-4 lg:sticky lg:top-28">
-            <div className="rounded-3xl bg-gradient-to-b from-[#181818] to-[#121212] border-2 border-gold/40 p-6 sm:p-7 shadow-card-dark">
+            <div className="rounded-xl bg-[#111111] border border-gold/30 p-6 sm:p-7 shadow-lg">
               <p className="text-[11px] font-sans font-semibold tracking-[0.2em] uppercase text-gold mb-1">
                 HALL ENQUIRY
               </p>
@@ -235,7 +235,7 @@ export default function FunctionHallPage() {
               </p>
 
               {/* Price Summary */}
-              <div className="p-4 rounded-xl bg-white/5 border border-white/10 mb-6 flex items-baseline justify-between">
+              <div className="p-4 rounded-lg bg-white/5 border border-white/10 mb-6 flex items-baseline justify-between">
                 <span className="text-xs font-sans text-ivory/60 uppercase">Hall Rate</span>
                 <div className="text-right">
                   <span className="font-serif text-2xl font-bold text-gold">
@@ -252,7 +252,7 @@ export default function FunctionHallPage() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2.5 py-4 bg-gold text-black font-sans font-bold text-sm rounded-xl hover:bg-gold-light transition-all shadow-gold focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-gold text-black font-sans font-semibold text-xs sm:text-sm tracking-wider uppercase rounded-lg hover:bg-gold-light transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
                   aria-label="Enquire Now on WhatsApp"
                 >
                   <MessageCircle className="w-4 h-4 text-black" />
@@ -262,7 +262,7 @@ export default function FunctionHallPage() {
                 {/* Call Hotel Button */}
                 <a
                   href={`tel:${hotel.contact.phone[0]}`}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm rounded-xl hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-xs sm:text-sm tracking-wider uppercase rounded-lg hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
                   aria-label="Call Front Desk"
                 >
                   <Phone className="w-4 h-4 text-gold" />

@@ -110,16 +110,16 @@ export default function Amenities({
             return (
               <StaggerItem key={item.name}>
                 <div
-                  className="group relative h-full flex flex-col justify-between p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border border-black/8 hover:border-gold/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_28px_rgba(212,175,55,0.18)] hover:-translate-y-1.5 transition-all duration-300 motion-reduce:transform-none cursor-default"
+                  className="group relative h-full flex flex-col justify-between p-4 sm:p-6 rounded-xl bg-white border border-black/8 hover:border-gold/40 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 motion-reduce:transform-none cursor-default"
                 >
                   <div>
                     {/* Gold Icon Accent */}
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gold/15 border border-gold/30 flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-gold transition-all duration-300 shadow-sm">
-                      <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-gold group-hover:text-black transition-colors duration-300" />
+                    <div className="w-11 h-11 rounded-lg bg-gold/10 border border-gold/25 flex items-center justify-center mb-4 group-hover:bg-gold transition-all duration-300">
+                      <Icon className="w-5 h-5 text-gold group-hover:text-black transition-colors duration-300" />
                     </div>
 
                     {/* Amenity Title in Black Text */}
-                    <h3 className="font-serif text-lg sm:text-xl font-bold text-black group-hover:text-gold-dark transition-colors duration-200 mb-1.5 sm:mb-2">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-black group-hover:text-gold-dark transition-colors duration-200 mb-1.5">
                       {item.name}
                     </h3>
 
@@ -130,7 +130,7 @@ export default function Amenities({
                   </div>
 
                   {/* Subtle bottom decorative accent */}
-                  <div className="mt-4 sm:mt-5 pt-3 border-t border-black/5 flex items-center justify-between">
+                  <div className="mt-4 pt-3 border-t border-black/5 flex items-center justify-between">
                     <span className="text-[10px] font-sans font-semibold tracking-wider uppercase text-gold-dark/80">
                       Complimentary
                     </span>

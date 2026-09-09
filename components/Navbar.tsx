@@ -160,10 +160,10 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => openBookingModal()}
-                className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-black text-sm font-sans font-semibold rounded-xl hover:bg-gold-light hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
+                className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-black text-xs font-sans font-semibold tracking-wider uppercase rounded-lg hover:bg-gold-light hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
                 aria-label="Book Your Stay at Vikram Bliss Inn"
               >
-                <CalendarDays className="w-4 h-4 text-black" />
+                <CalendarDays className="w-3.5 h-3.5 text-black" />
                 <span>Book Your Stay</span>
                 <ArrowRight className="w-3.5 h-3.5 text-black group-hover:translate-x-0.5 transition-transform" />
               </button>
@@ -174,7 +174,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => openBookingModal()}
-                className="h-11 min-h-[44px] px-3.5 bg-gold text-black text-xs font-sans font-bold rounded-xl hover:bg-gold-light active:scale-95 transition-all cursor-pointer flex items-center justify-center shadow-sm"
+                className="h-10 min-h-[44px] px-3.5 bg-gold text-black text-xs font-sans font-semibold tracking-wider uppercase rounded-lg hover:bg-gold-light active:scale-95 transition-all cursor-pointer flex items-center justify-center shadow-sm"
                 aria-label="Book Your Stay"
               >
                 Book
@@ -283,17 +283,17 @@ export default function Navbar() {
                   setIsMobileOpen(false);
                   openBookingModal();
                 }}
-                className="w-full flex items-center justify-center gap-2.5 py-4 bg-gold text-black font-sans font-bold text-base rounded-2xl shadow-gold hover:bg-gold-light active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
+                className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-gold text-black font-sans font-semibold text-xs tracking-wider uppercase rounded-xl shadow-sm hover:bg-gold-light active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
               >
-                <CalendarDays className="w-5 h-5 text-black" />
+                <CalendarDays className="w-4 h-4 text-black" />
                 <span>Book Your Stay</span>
               </button>
 
               <a
                 href={`tel:${hotel.contact.phone[0]}`}
-                className="w-full flex items-center justify-center gap-2 py-3.5 border border-white/20 text-ivory font-sans font-medium text-sm rounded-2xl hover:bg-white/5 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                className="w-full flex items-center justify-center gap-2 py-3 border border-white/20 text-ivory font-sans font-medium text-xs tracking-wider uppercase rounded-xl hover:bg-white/5 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
-                <Phone className="w-4 h-4 text-gold" />
+                <Phone className="w-3.5 h-3.5 text-gold" />
                 <span>Call: {hotel.contact.phone[0]}</span>
               </a>
 

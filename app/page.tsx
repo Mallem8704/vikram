@@ -28,8 +28,8 @@ export default function HomePage() {
         <div className="section-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: "24+", label: "Clean & Spacious Rooms" },
-              { value: "200+", label: "Function Hall Capacity" },
+              { value: "3", label: "Room Categories" },
+              { value: "₹1,300", label: "Starting From / Night" },
               { value: "24/7", label: "Front Desk Assistance" },
               { value: "100%", label: "Real Property & Photos" },
             ].map(({ value, label }) => (
@@ -89,7 +89,7 @@ export default function HomePage() {
             </div>
 
             {/* Real Guest Quote */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-brown via-black to-brown-light p-8 rounded-3xl border border-gold/30 shadow-card-dark">
+            <div className="lg:col-span-5 bg-[#121212] p-8 rounded-xl border border-gold/30 shadow-lg">
               <p className="text-gold text-xs font-sans font-semibold tracking-wider uppercase mb-3">
                 Guest Impressions
               </p>

@@ -51,7 +51,7 @@ export default function LocationSection({
           {/* ──────────────── Left Column (5 of 12 on desktop): Details + CTAs ──────────────── */}
           <ScrollReveal delay={0.05} className="lg:col-span-5 flex flex-col justify-between space-y-6 sm:space-y-7">
             {/* Property Name & Address */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-[#141414] border border-white/10 shadow-card-dark hover:-translate-y-1 transition-transform duration-300 motion-reduce:transform-none">
+            <div className="p-6 sm:p-7 rounded-xl bg-[#141414] border border-white/10 shadow-card-dark hover:-translate-y-0.5 transition-transform duration-300 motion-reduce:transform-none">
               <div className="inline-flex items-center gap-2 mb-2">
                 <span className="w-4 h-0.5 bg-gold rounded-full" />
                 <span className="text-[11px] font-sans font-semibold tracking-widest text-gold uppercase">
@@ -64,7 +64,7 @@ export default function LocationSection({
               </h3>
 
               <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-gold/15 border border-gold/30 flex items-center justify-center shrink-0 mt-0.5 text-gold">
+                <div className="w-10 h-10 rounded-lg bg-gold/15 border border-gold/30 flex items-center justify-center shrink-0 mt-0.5 text-gold">
                   <MapPin className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <address className="not-italic text-sm sm:text-base font-sans text-ivory/80 leading-relaxed">
@@ -79,7 +79,7 @@ export default function LocationSection({
             </div>
 
             {/* Phone Numbers */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-[#141414] border border-white/10 shadow-card-dark hover:-translate-y-1 transition-transform duration-300 motion-reduce:transform-none">
+            <div className="p-6 sm:p-7 rounded-xl bg-[#141414] border border-white/10 shadow-card-dark hover:-translate-y-0.5 transition-transform duration-300 motion-reduce:transform-none">
               <div className="flex items-center gap-2 mb-3">
                 <Phone className="w-4 h-4 text-gold" aria-hidden="true" />
                 <span className="text-xs font-sans font-semibold tracking-wider text-gold uppercase">
@@ -112,7 +112,7 @@ export default function LocationSection({
               {/* Button 1: Call 9966731010 */}
               <a
                 href="tel:9966731010"
-                className="flex-1 min-w-[160px] min-h-[48px] inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl bg-gold text-black font-sans font-bold text-sm hover:bg-gold-light hover:-translate-y-0.5 active:scale-[0.98] transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
+                className="flex-1 min-w-[160px] min-h-[48px] inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-lg bg-gold text-black font-sans font-semibold text-xs sm:text-sm tracking-wider uppercase hover:bg-gold-light hover:-translate-y-0.5 active:scale-[0.98] transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
                 aria-label="Call 9966731010"
               >
                 <Phone className="w-4 h-4 text-black" aria-hidden="true" />
@@ -124,7 +124,7 @@ export default function LocationSection({
                 href="https://wa.me/919966731010?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[140px] min-h-[48px] inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl bg-[#25D366] text-white font-sans font-bold text-sm hover:bg-[#20bd5a] hover:-translate-y-0.5 active:scale-[0.98] transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 cursor-pointer"
+                className="flex-1 min-w-[140px] min-h-[48px] inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-lg bg-[#25D366] text-white font-sans font-semibold text-xs sm:text-sm tracking-wider uppercase hover:bg-[#20bd5a] hover:-translate-y-0.5 active:scale-[0.98] transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 cursor-pointer"
                 aria-label="Chat with Vikram Bliss Inn on WhatsApp"
               >
                 <MessageCircle className="w-4 h-4 text-white" aria-hidden="true" />
@@ -136,7 +136,7 @@ export default function LocationSection({
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-2xl border border-white/20 hover:border-gold text-ivory hover:text-gold hover:-translate-y-0.5 active:scale-[0.98] font-sans font-semibold text-sm hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
+                className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-lg border border-white/20 hover:border-gold text-ivory hover:text-gold hover:-translate-y-0.5 active:scale-[0.98] font-sans font-semibold text-xs sm:text-sm tracking-wider uppercase hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
                 aria-label="Get Directions to Vikram Bliss Inn on Google Maps"
               >
                 <Navigation className="w-4 h-4 text-gold" aria-hidden="true" />
@@ -148,7 +148,7 @@ export default function LocationSection({
 
           {/* ──────────────── Right Column (7 of 12 on desktop): Clean Map Container ──────────────── */}
           <ScrollReveal delay={0.15} className="lg:col-span-7 flex flex-col min-h-[380px] sm:min-h-[440px] lg:min-h-[480px]">
-            <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/15 bg-[#161616] shadow-2xl flex flex-col group hover:-translate-y-1 transition-transform duration-300 motion-reduce:transform-none">
+            <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/15 bg-[#161616] shadow-xl flex flex-col group hover:-translate-y-0.5 transition-transform duration-300 motion-reduce:transform-none">
               {/* Top Banner inside Map container */}
               <div className="absolute top-4 left-4 right-4 z-10 flex items-center justify-between pointer-events-none">
                 <div className="bg-black/85 backdrop-blur-md border border-white/15 px-3.5 py-1.5 rounded-full text-xs font-sans text-ivory shadow-lg flex items-center gap-2">

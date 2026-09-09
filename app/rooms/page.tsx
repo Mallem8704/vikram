@@ -24,11 +24,11 @@ export const metadata: Metadata = {
 
 const whyChooseUs = [
   "Daily housekeeping and fresh linen",
-  "24-hour hot and cold water",
-  "Power backup throughout the night",
-  "In-house restaurant with Andhra cuisine",
-  "Convenient location near Kadiri bus stand",
-  "Genuine, friendly hospitality",
+  "24/7 hot and cold water",
+  "High-speed unlimited Wi-Fi",
+  "LED television in rooms",
+  "Secure vehicle parking",
+  "24/7 front desk assistance",
 ];
 
 export default function RoomsPage() {
@@ -76,9 +76,9 @@ export default function RoomsPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-brown rounded-2xl p-8 text-ivory">
+            <div className="bg-[#121212] border border-gold/30 rounded-xl p-8 text-ivory shadow-lg">
               <p className="font-serif text-2xl text-gold italic mb-3">
-                &ldquo;A clean room, a warm meal, and a helpful team — that&apos;s the Vikram Bliss Inn promise.&rdquo;
+                &ldquo;A clean room, comfortable beds, and a helpful team — that&apos;s the Vikram Bliss Inn promise.&rdquo;
               </p>
               <p className="text-sm font-sans text-ivory/50">
                 — The Vikram Bliss Inn Team, Kadiri

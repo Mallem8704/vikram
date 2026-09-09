@@ -42,10 +42,10 @@ export default function RoomsSection({
             {showViewAll && (
               <Link
                 href="/rooms"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 hover:bg-gold text-ivory hover:text-black border border-white/15 hover:border-gold hover:-translate-y-0.5 active:scale-[0.98] font-sans font-semibold text-sm transition-all duration-200 shrink-0 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/5 hover:bg-gold text-ivory hover:text-black border border-white/15 hover:border-gold hover:-translate-y-0.5 active:scale-[0.98] font-sans font-semibold text-xs tracking-wider uppercase transition-all duration-200 shrink-0 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
                 <span>View All Rooms</span>
-                <ArrowRight className="w-4 h-4 text-gold group-hover:text-black group-hover:translate-x-1 transition-all duration-200" />
+                <ArrowRight className="w-3.5 h-3.5 text-gold group-hover:text-black group-hover:translate-x-0.5 transition-all duration-200" />
               </Link>
             )}
           </div>
@@ -68,10 +68,10 @@ export default function RoomsSection({
           <ScrollReveal delay={0.2} className="mt-10 flex justify-center md:hidden">
             <Link
               href="/rooms"
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gold text-black font-sans font-bold text-sm shadow-gold hover:bg-gold-light active:scale-[0.98] transition-all"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-gold text-black font-sans font-semibold text-xs tracking-wider uppercase shadow-sm hover:bg-gold-light active:scale-[0.98] transition-all"
             >
               <span>View All Rooms</span>
-              <ArrowRight className="w-4 h-4 text-black" />
+              <ArrowRight className="w-3.5 h-3.5 text-black" />
             </Link>
           </ScrollReveal>
         )}

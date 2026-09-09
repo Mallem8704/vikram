@@ -26,34 +26,34 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-brown text-ivory/80">
+    <footer className="bg-[#0A0A0A] text-ivory/80 border-t border-white/10">
       {/* Main Footer */}
       <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="block mb-4">
-              <h3 className="font-serif text-2xl text-gold font-semibold leading-none">
+              <h3 className="font-serif text-2xl text-gold font-bold leading-none uppercase tracking-wide">
                 Vikram Bliss Inn
               </h3>
-              <p className="text-xs tracking-[0.18em] uppercase text-ivory/40 mt-1 font-sans">
-                Kadiri, Andhra Pradesh
+              <p className="text-[11px] tracking-[0.2em] uppercase text-ivory/50 mt-1.5 font-sans">
+                Kadiri • Andhra Pradesh
               </p>
             </Link>
             <span className="gold-divider" />
             <p className="text-sm font-sans text-ivory/60 leading-relaxed mt-3">
-              A premium boutique hotel in the heart of Kadiri, offering warm
-              hospitality, comfortable rooms, and a convenient location for
-              pilgrims and travellers alike.
+              A comfortable and welcoming stay in the heart of Kadiri, offering genuine
+              hospitality, clean rooms, and a convenient location for
+              families, pilgrims and travellers.
             </p>
             {/* WhatsApp CTA */}
             <a
               href={`https://wa.me/${hotel.contact.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="min-h-[44px] inline-flex items-center gap-2 mt-5 px-4 py-2.5 bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] rounded-xl text-sm font-sans font-medium hover:bg-[#25D366]/20 transition-colors"
+              className="min-h-[44px] inline-flex items-center gap-2 mt-5 px-4 py-2.5 bg-white/5 border border-white/15 text-ivory rounded-lg text-xs font-sans font-medium hover:border-gold hover:text-gold transition-colors"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4 text-[#25D366]" />
               Chat on WhatsApp
             </a>
           </div>

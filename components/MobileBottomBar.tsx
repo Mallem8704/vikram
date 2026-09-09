@@ -17,11 +17,11 @@ export default function MobileBottomBar() {
         {/* 1. CALL CTA */}
         <a
           href="tel:9966731010"
-          className="flex flex-col items-center justify-center gap-1 h-12 min-h-[44px] rounded-xl bg-white/10 hover:bg-white/15 active:scale-95 text-ivory border border-white/15 transition-all text-center px-1 cursor-pointer"
+          className="flex flex-col items-center justify-center gap-1 h-12 min-h-[44px] rounded-lg bg-white/10 hover:bg-white/15 active:scale-95 text-ivory border border-white/15 transition-all text-center px-1 cursor-pointer shadow-sm"
           aria-label="Call Hotel Reception at 9966731010"
         >
           <Phone className="w-4 h-4 text-gold shrink-0" aria-hidden="true" />
-          <span className="text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase">
+          <span className="text-[10px] sm:text-[11px] font-sans font-semibold tracking-wider uppercase">
             CALL
           </span>
         </a>
@@ -31,11 +31,11 @@ export default function MobileBottomBar() {
           href={`https://wa.me/${hotel.contact.whatsapp}?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center gap-1 h-12 min-h-[44px] rounded-xl bg-[#25D366] hover:bg-[#20bd5a] active:scale-95 text-white transition-all text-center px-1 shadow-md cursor-pointer"
+          className="flex flex-col items-center justify-center gap-1 h-12 min-h-[44px] rounded-lg bg-[#25D366] hover:bg-[#20bd5a] active:scale-95 text-white transition-all text-center px-1 shadow-sm cursor-pointer"
           aria-label="Chat with Vikram Bliss Inn on WhatsApp"
         >
           <MessageCircle className="w-4 h-4 text-white shrink-0" aria-hidden="true" />
-          <span className="text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase">
+          <span className="text-[10px] sm:text-[11px] font-sans font-semibold tracking-wider uppercase">
             WHATSAPP
           </span>
         </a>
@@ -44,11 +44,11 @@ export default function MobileBottomBar() {
         <button
           type="button"
           onClick={() => openBookingModal()}
-          className="flex flex-col items-center justify-center gap-1 h-12 min-h-[44px] rounded-xl bg-gold hover:bg-gold-light active:scale-95 text-black transition-all text-center px-1 shadow-gold font-sans font-bold cursor-pointer"
+          className="flex flex-col items-center justify-center gap-1 h-12 min-h-[44px] rounded-lg bg-gold hover:bg-gold-light active:scale-95 text-black transition-all text-center px-1 shadow-sm font-sans font-semibold cursor-pointer"
           aria-label="Book Your Stay - Open Reservation Enquiry Modal"
         >
           <CalendarDays className="w-4 h-4 text-black shrink-0" aria-hidden="true" />
-          <span className="text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase">
+          <span className="text-[10px] sm:text-[11px] font-sans font-semibold tracking-wider uppercase">
             BOOK NOW
           </span>
         </button>

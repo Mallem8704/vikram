@@ -118,11 +118,11 @@ export default function RoomDetail({ room }: RoomDetailProps) {
           </div>
 
           {/* Gold Pricing Badge */}
-          <div className="bg-gold text-black px-5 py-2.5 rounded-2xl shadow-gold shrink-0 self-start md:self-auto text-right">
+          <div className="bg-gold text-black px-4 py-2 rounded-lg shadow-sm shrink-0 self-start md:self-auto text-right">
             <p className="font-serif text-3xl font-bold leading-none">
               {formatCurrency(room.pricePerNight)}
             </p>
-            <p className="text-[11px] font-sans font-semibold uppercase tracking-wider text-black/80 mt-0.5">
+            <p className="text-[10px] font-sans font-semibold uppercase tracking-wider text-black/80 mt-0.5">
               per night
             </p>
           </div>
@@ -131,7 +131,7 @@ export default function RoomDetail({ room }: RoomDetailProps) {
         {/* ──────────────── 3. Large Real Room Photograph ──────────────── */}
         <div
           onClick={() => openLightbox(0)}
-          className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/10] rounded-3xl overflow-hidden border border-white/15 bg-black cursor-pointer group shadow-2xl mb-12"
+          className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/10] rounded-xl overflow-hidden border border-white/15 bg-black cursor-pointer group shadow-lg mb-12"
         >
           <Image
             src={images[0].src}
@@ -152,7 +152,7 @@ export default function RoomDetail({ room }: RoomDetailProps) {
           </div>
 
           {/* Real Photo Authenticity Badge */}
-          <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md border border-gold/40 text-gold text-xs font-sans font-semibold px-3.5 py-1.5 rounded-xl flex items-center gap-2">
+          <div className="absolute bottom-4 left-4 bg-black/85 backdrop-blur-md border border-gold/40 text-gold text-xs font-sans font-semibold px-3 py-1.5 rounded-lg flex items-center gap-2">
             <Sparkles className="w-3.5 h-3.5 text-gold" />
             <span>Actual Vikram Bliss Inn Photograph</span>
           </div>
@@ -261,8 +261,8 @@ export default function RoomDetail({ room }: RoomDetailProps) {
 
           {/* Right Column (4 of 12): Sticky Booking CTA Card */}
           <aside className="lg:col-span-4 lg:sticky lg:top-28">
-            <div className="rounded-3xl bg-gradient-to-b from-[#181818] to-[#121212] border-2 border-gold/40 p-6 sm:p-7 shadow-card-dark">
-              <p className="text-[11px] font-sans font-semibold tracking-[0.2em] uppercase text-gold mb-1">
+            <div className="rounded-xl bg-[#111111] border border-gold/30 p-6 sm:p-7 shadow-lg">
+              <p className="text-[10px] font-sans font-semibold tracking-[0.2em] uppercase text-gold mb-1">
                 RESERVATION
               </p>
               <h3 className="font-serif text-2xl font-bold text-ivory mb-2">
@@ -273,7 +273,7 @@ export default function RoomDetail({ room }: RoomDetailProps) {
               </p>
 
               {/* Price Summary */}
-              <div className="p-4 rounded-xl bg-white/5 border border-white/10 mb-6 flex items-baseline justify-between">
+              <div className="p-4 rounded-lg bg-white/5 border border-white/10 mb-6 flex items-baseline justify-between">
                 <span className="text-xs font-sans text-ivory/60 uppercase">Price</span>
                 <div className="text-right">
                   <span className="font-serif text-2xl font-bold text-gold">
@@ -289,7 +289,7 @@ export default function RoomDetail({ room }: RoomDetailProps) {
                 <button
                   type="button"
                   onClick={() => openBookingModal({ roomType: room.name })}
-                  className="w-full min-h-[48px] flex items-center justify-center gap-2.5 py-3.5 bg-gold text-black font-sans font-bold text-sm sm:text-base rounded-xl hover:bg-gold-light transition-all shadow-gold focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
+                  className="w-full min-h-[48px] flex items-center justify-center gap-2 py-3 bg-gold text-black font-sans font-semibold text-xs tracking-wider uppercase rounded-lg hover:bg-gold-light transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
                 >
                   <CalendarDays className="w-4 h-4 text-black" />
                   <span>Book This Room</span>
@@ -300,18 +300,18 @@ export default function RoomDetail({ room }: RoomDetailProps) {
                   href={`https://wa.me/${hotel.contact.whatsapp}?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20enquire%20about%20booking%20the%20${encodeURIComponent(room.name)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full min-h-[44px] flex items-center justify-center gap-2.5 py-3 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm rounded-xl hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full min-h-[44px] flex items-center justify-center gap-2 py-2.5 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-medium text-xs tracking-wider uppercase rounded-lg hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
                 >
-                  <MessageCircle className="w-4 h-4 text-gold" />
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" />
                   <span>Quick WhatsApp</span>
                 </a>
 
                 {/* Call Now Action */}
                 <a
                   href={`tel:${hotel.contact.phone[0]}`}
-                  className="w-full min-h-[44px] flex items-center justify-center gap-2 py-3 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm rounded-xl hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full min-h-[44px] flex items-center justify-center gap-2 py-2.5 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-medium text-xs tracking-wider uppercase rounded-lg hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
                 >
-                  <Phone className="w-4 h-4 text-gold" />
+                  <Phone className="w-3.5 h-3.5 text-gold" />
                   <span>Call: {hotel.contact.phone[0]}</span>
                 </a>
               </div>

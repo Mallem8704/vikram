@@ -203,18 +203,18 @@ export default function Gallery({
                       setLightboxIndex(null);
                     }}
                     className={cn(
-                      "inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 min-h-[44px] rounded-full text-xs sm:text-sm font-sans font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97] cursor-pointer",
+                      "inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 min-h-[44px] rounded-lg text-xs font-sans font-semibold tracking-wider uppercase transition-all duration-200 active:scale-[0.98] cursor-pointer",
                       isActive
-                        ? "bg-gold text-black shadow-gold scale-105"
-                        : "bg-white/5 text-ivory/70 border border-white/10 hover:border-gold/50 hover:text-ivory hover:bg-white/10"
+                        ? "bg-gold text-black shadow-sm"
+                        : "bg-white/5 text-ivory/70 border border-white/10 hover:border-gold/40 hover:text-ivory hover:bg-white/10"
                     )}
                     aria-pressed={isActive}
                   >
-                    <Icon className={cn("w-4 h-4", isActive ? "text-black" : "text-gold")} />
+                    <Icon className={cn("w-3.5 h-3.5", isActive ? "text-black" : "text-gold")} />
                     <span>{label}</span>
                     <span
                       className={cn(
-                        "text-[11px] px-2 py-0.5 rounded-full font-mono font-medium",
+                        "text-[10px] px-1.5 py-0.5 rounded font-mono font-medium",
                         isActive ? "bg-black/20 text-black" : "bg-white/10 text-ivory/60"
                       )}
                     >
@@ -244,7 +244,7 @@ export default function Gallery({
                   transition={{ duration: 0.3, ease: "easeOut" }}
                   onClick={() => openLightbox(idx)}
                   className={cn(
-                    "group relative rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer border border-white/10 hover:border-gold/60 shadow-card-dark transition-all duration-300 bg-[#161616] hover:-translate-y-1",
+                    "group relative rounded-xl overflow-hidden cursor-pointer border border-white/10 hover:border-gold/40 shadow-sm transition-all duration-300 bg-[#161616] hover:-translate-y-1",
                     isSpanWide && "sm:col-span-2",
                     isSpanTall && "sm:row-span-2"
                   )}
@@ -272,13 +272,13 @@ export default function Gallery({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-75 group-hover:opacity-95 transition-opacity duration-300" />
 
                   {/* Top Hover Hint: Click to Enlarge */}
-                  <div className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-black/70 backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-gold shadow-lg group-hover:scale-105">
-                    <Maximize2 className="w-4 h-4" />
+                  <div className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-black/70 backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-gold shadow-sm">
+                    <Maximize2 className="w-3.5 h-3.5" />
                   </div>
 
                   {/* Bottom Caption Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="inline-block text-[10px] font-sans font-semibold tracking-widest uppercase text-gold bg-black/60 px-2.5 py-0.5 rounded-full border border-gold/30 mb-1.5 backdrop-blur-sm">
+                    <span className="inline-block text-[9px] font-sans font-semibold tracking-widest uppercase text-gold bg-black/70 px-2 py-0.5 rounded border border-gold/30 mb-1.5 backdrop-blur-sm">
                       {item.category.toUpperCase()}
                     </span>
                     <h3 className="text-ivory text-sm sm:text-base font-serif font-bold leading-snug drop-shadow-md">
@@ -296,10 +296,10 @@ export default function Gallery({
           <div className="mt-10 sm:mt-12 text-center">
             <Link
               href="/gallery"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gold text-black font-sans font-bold text-sm hover:bg-gold-light hover:-translate-y-0.5 active:scale-[0.98] transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gold text-black font-sans font-semibold text-xs tracking-wider uppercase hover:bg-gold-light hover:-translate-y-0.5 active:scale-[0.98] transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
             >
               <span>View All Hotel Photos</span>
-              <ArrowRight className="w-4 h-4 text-black" />
+              <ArrowRight className="w-3.5 h-3.5 text-black" />
             </Link>
           </div>
         ) : (

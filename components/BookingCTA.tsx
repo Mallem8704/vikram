@@ -60,9 +60,9 @@ export default function BookingCTA({
             type="button"
             onClick={() => openBookingModal()}
             className={cn(
-              "flex items-center gap-2 px-7 py-3.5 rounded-xl font-sans font-semibold text-sm transition-colors cursor-pointer",
+              "flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-sans font-semibold text-xs tracking-wider uppercase transition-all shadow-sm cursor-pointer active:scale-[0.98]",
               theme === "gold"
-                ? "bg-black text-gold hover:bg-black/80"
+                ? "bg-black text-gold hover:bg-black/90"
                 : "bg-gold text-black hover:bg-gold-light"
             )}
           >
@@ -72,13 +72,13 @@ export default function BookingCTA({
           <a
             href={`tel:${hotel.contact.phone[0]}`}
             className={cn(
-              "flex items-center gap-2 px-7 py-3.5 rounded-xl font-sans font-medium text-sm border transition-colors",
+              "flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-sans font-medium text-xs tracking-wider uppercase border transition-all active:scale-[0.98]",
               theme === "gold"
                 ? "border-black/30 text-black hover:bg-black/5"
-                : "border-white/20 text-ivory hover:bg-white/5"
+                : "border-white/20 text-ivory hover:bg-white/5 hover:border-gold hover:text-gold"
             )}
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-3.5 h-3.5 text-gold" />
             {hotel.contact.phone[0]}
           </a>
           <Link
