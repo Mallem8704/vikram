@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import LocationSection from "@/components/LocationSection";
 import BookingCTA from "@/components/BookingCTA";
 import { hotel } from "@/lib/data/hotel";
-import { Landmark, Bus, Train, MapPin, Car, Clock } from "lucide-react";
+import { Landmark, Bus, Train, MapPin, Car, Clock, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Location & Contact",
@@ -60,8 +61,23 @@ const travelTips = [
 export default function LocationPage() {
   return (
     <>
+      {/* ──────────────── Breadcrumb ──────────────── */}
+      <div className="pt-20 md:pt-24 border-b border-white/10 bg-black/60 backdrop-blur-md">
+        <div className="section-container py-3">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-ivory/60">
+            <Link href="/" className="hover:text-gold transition-colors">
+              Home
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-ivory/30" />
+            <span className="text-gold font-medium" aria-current="page">
+              Location & Contact
+            </span>
+          </nav>
+        </div>
+      </div>
+
       {/* Page Header */}
-      <div className="pt-24 md:pt-32 pb-12 bg-black">
+      <div className="pt-8 pb-10 bg-black">
         <div className="section-container">
           <SectionHeading
             eyebrow="Reach Us Easily"
