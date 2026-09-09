@@ -290,11 +290,11 @@ export default function BookingModal() {
 
       {/* Modal Card */}
       <div
-        className="relative w-full max-w-xl my-auto rounded-3xl bg-[#121212] border border-white/15 text-ivory shadow-2xl overflow-hidden z-10 max-h-[92vh] flex flex-col animate-modal-pop"
+        className="relative w-full max-w-xl my-auto rounded-2xl sm:rounded-3xl bg-[#121212] border border-white/15 text-ivory shadow-2xl overflow-hidden z-10 max-h-[92vh] flex flex-col animate-modal-pop"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="flex items-start justify-between p-5 sm:p-6 pb-4 border-b border-white/10 bg-[#161616] shrink-0">
+        <div className="flex items-start justify-between p-4 sm:p-6 pb-3 sm:pb-4 border-b border-white/10 bg-[#161616] shrink-0">
           <div>
             <div className="inline-flex items-center gap-2 mb-1">
               <span className="w-4 h-0.5 bg-gold rounded-full" />
@@ -302,10 +302,10 @@ export default function BookingModal() {
                 VIKRAM BLISS INN • KADIRI
               </p>
             </div>
-            <h2 id="booking-modal-title" className="font-serif text-2xl sm:text-3xl font-bold text-ivory">
+            <h2 id="booking-modal-title" className="font-serif text-xl sm:text-3xl font-bold text-ivory">
               Book Your Stay
             </h2>
-            <p className="text-xs font-sans text-ivory/60 mt-1">
+            <p className="text-xs font-sans text-ivory/60 mt-0.5 sm:mt-1">
               Direct enquiry with hotel reception • Instant WhatsApp & phone assistance
             </p>
           </div>
@@ -313,14 +313,14 @@ export default function BookingModal() {
           <button
             onClick={closeBookingModal}
             aria-label="Close booking modal"
-            className="p-2 rounded-full text-ivory/60 hover:text-gold hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-ivory/60 hover:text-gold hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Important Notice Banner: Enquiry Only / No Payment / No Fake Real-Time Availability */}
-        <div className="bg-gold/10 border-b border-gold/20 px-5 sm:px-6 py-2.5 flex items-center gap-2.5 shrink-0">
+        <div className="bg-gold/10 border-b border-gold/20 px-4 sm:px-6 py-2.5 flex items-center gap-2.5 shrink-0">
           <Info className="w-4 h-4 text-gold shrink-0" />
           <p className="text-[11px] sm:text-xs font-sans text-ivory/80 leading-snug">
             <strong className="text-gold font-semibold">Enquiry System:</strong> This sends a request to check room availability directly with our front desk. No payment is collected and this is not a confirmed reservation.
@@ -328,7 +328,7 @@ export default function BookingModal() {
         </div>
 
         {/* Modal Body: Form OR Enquiry Ready Screen */}
-        <div className="p-5 sm:p-6 overflow-y-auto flex-1">
+        <div className="p-4 sm:p-6 overflow-y-auto flex-1">
           {!isSubmitted ? (
             /* ──────────────── Form View ──────────────── */
             <form onSubmit={handleSubmit} noValidate className="space-y-4 sm:space-y-5">
@@ -357,7 +357,7 @@ export default function BookingModal() {
                         validateForm({ name });
                       }}
                       placeholder="e.g. Ramesh Kumar"
-                      className={`w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white/5 border text-sm font-sans text-ivory placeholder:text-ivory/30 focus:outline-none transition-colors ${
+                      className={`w-full min-h-[44px] pl-10 pr-3.5 py-2.5 rounded-xl bg-white/5 border text-base sm:text-sm font-sans text-ivory placeholder:text-ivory/30 focus:outline-none transition-colors ${
                         touched.name && errors.name
                           ? "border-red-500 focus:border-red-500"
                           : "border-white/15 focus:border-gold"
@@ -395,7 +395,7 @@ export default function BookingModal() {
                         validateForm({ phone });
                       }}
                       placeholder="e.g. 98765 43210"
-                      className={`w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white/5 border text-sm font-sans text-ivory placeholder:text-ivory/30 focus:outline-none transition-colors ${
+                      className={`w-full min-h-[44px] pl-10 pr-3.5 py-2.5 rounded-xl bg-white/5 border text-base sm:text-sm font-sans text-ivory placeholder:text-ivory/30 focus:outline-none transition-colors ${
                         touched.phone && errors.phone
                           ? "border-red-500 focus:border-red-500"
                           : "border-white/15 focus:border-gold"
@@ -432,7 +432,7 @@ export default function BookingModal() {
                       setTouched((prev) => ({ ...prev, roomType: true }));
                       validateForm({ roomType });
                     }}
-                    className={`w-full pl-10 pr-9 py-2.5 rounded-xl bg-[#1c1c1c] border text-sm font-sans text-ivory focus:outline-none transition-colors appearance-none cursor-pointer ${
+                    className={`w-full min-h-[44px] pl-10 pr-9 py-2.5 rounded-xl bg-[#1c1c1c] border text-base sm:text-sm font-sans text-ivory focus:outline-none transition-colors appearance-none cursor-pointer ${
                       touched.roomType && errors.roomType
                         ? "border-red-500 focus:border-red-500"
                         : "border-white/15 focus:border-gold"
@@ -478,7 +478,7 @@ export default function BookingModal() {
                         setTouched((prev) => ({ ...prev, checkIn: true }));
                         validateForm({ checkIn });
                       }}
-                      className={`w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white/5 border text-sm font-sans text-ivory focus:outline-none transition-colors ${
+                      className={`w-full min-h-[44px] pl-10 pr-3.5 py-2.5 rounded-xl bg-white/5 border text-base sm:text-sm font-sans text-ivory focus:outline-none transition-colors ${
                         touched.checkIn && errors.checkIn
                           ? "border-red-500 focus:border-red-500"
                           : "border-white/15 focus:border-gold"
@@ -513,7 +513,7 @@ export default function BookingModal() {
                         setTouched((prev) => ({ ...prev, checkOut: true }));
                         validateForm({ checkOut });
                       }}
-                      className={`w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white/5 border text-sm font-sans text-ivory focus:outline-none transition-colors ${
+                      className={`w-full min-h-[44px] pl-10 pr-3.5 py-2.5 rounded-xl bg-white/5 border text-base sm:text-sm font-sans text-ivory focus:outline-none transition-colors ${
                         touched.checkOut && errors.checkOut
                           ? "border-red-500 focus:border-red-500"
                           : "border-white/15 focus:border-gold"
@@ -543,7 +543,7 @@ export default function BookingModal() {
                     id={guestsId}
                     value={guests}
                     onChange={(e) => setGuests(e.target.value)}
-                    className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-[#1c1c1c] border border-white/15 text-sm font-sans text-ivory focus:border-gold focus:outline-none transition-colors appearance-none cursor-pointer"
+                    className="w-full min-h-[44px] pl-10 pr-9 py-2.5 rounded-xl bg-[#1c1c1c] border border-white/15 text-base sm:text-sm font-sans text-ivory focus:border-gold focus:outline-none transition-colors appearance-none cursor-pointer"
                   >
                     {GUEST_OPTIONS.map((g) => (
                       <option key={g} value={g} className="bg-[#1a1a1a] text-ivory">
@@ -573,7 +573,7 @@ export default function BookingModal() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="e.g. Expected arrival around 6 PM, need extra mattress..."
-                    className="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white/5 border border-white/15 text-sm font-sans text-ivory placeholder:text-ivory/30 focus:border-gold focus:outline-none transition-colors resize-none"
+                    className="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-white/5 border border-white/15 text-base sm:text-sm font-sans text-ivory placeholder:text-ivory/30 focus:border-gold focus:outline-none transition-colors resize-none"
                   />
                 </div>
               </div>
@@ -582,7 +582,7 @@ export default function BookingModal() {
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gold text-black font-sans font-bold text-sm hover:bg-gold-light transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="flex-1 min-h-[48px] inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gold text-black font-sans font-bold text-sm sm:text-base hover:bg-gold-light transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <Sparkles className="w-4 h-4 text-black" />
                   <span>Send Enquiry on WhatsApp</span>
@@ -591,7 +591,7 @@ export default function BookingModal() {
 
                 <a
                   href={`tel:${hotel.contact.phone[0]}`}
-                  className="inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl border border-white/20 text-ivory hover:text-gold hover:border-gold font-sans font-semibold text-sm hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="min-h-[48px] inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl border border-white/20 text-ivory hover:text-gold hover:border-gold font-sans font-semibold text-sm sm:text-base hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <PhoneCall className="w-4 h-4 text-gold" />
                   <span>Call Hotel</span>
@@ -654,7 +654,7 @@ export default function BookingModal() {
                   href={generatedWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2.5 py-4 px-6 rounded-xl bg-gold text-black font-sans font-bold text-sm sm:text-base hover:bg-gold-light transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full min-h-[48px] flex items-center justify-center gap-2.5 py-4 px-6 rounded-xl bg-gold text-black font-sans font-bold text-sm sm:text-base hover:bg-gold-light transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <Sparkles className="w-5 h-5 text-black" />
                   <span>Send Enquiry on WhatsApp</span>
@@ -663,7 +663,7 @@ export default function BookingModal() {
                 {/* Secondary: Call Hotel */}
                 <a
                   href={`tel:${hotel.contact.phone[0]}`}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm hover:bg-white/5 transition-all"
+                  className="w-full min-h-[48px] flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm sm:text-base hover:bg-white/5 transition-all"
                 >
                   <PhoneCall className="w-4 h-4 text-gold" />
                   <span>Call Hotel Front Desk ({hotel.contact.phone[0]})</span>
@@ -673,7 +673,7 @@ export default function BookingModal() {
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="w-full text-center py-2 text-xs font-sans text-ivory/50 hover:text-gold transition-colors flex items-center justify-center gap-1.5"
+                  className="w-full min-h-[44px] text-center py-2 text-xs font-sans text-ivory/50 hover:text-gold transition-colors flex items-center justify-center gap-1.5"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   <span>Edit Enquiry Details</span>

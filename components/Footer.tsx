@@ -51,7 +51,7 @@ export default function Footer() {
               href={`https://wa.me/${hotel.contact.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-5 px-4 py-2.5 bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] rounded-lg text-sm font-sans font-medium hover:bg-[#25D366]/20 transition-colors"
+              className="min-h-[44px] inline-flex items-center gap-2 mt-5 px-4 py-2.5 bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] rounded-xl text-sm font-sans font-medium hover:bg-[#25D366]/20 transition-colors"
             >
               <MessageCircle className="w-4 h-4" />
               Chat on WhatsApp
@@ -69,7 +69,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm font-sans text-ivory/60 hover:text-gold transition-colors"
+                      className="inline-flex items-center min-h-[36px] text-sm font-sans text-ivory/60 hover:text-gold transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -84,7 +84,7 @@ export default function Footer() {
             <h4 className="font-serif text-lg text-ivory font-semibold mb-4">
               Contact Us
             </h4>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-3">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold mt-0.5 shrink-0" />
                 <p className="text-sm font-sans text-ivory/60 leading-relaxed">
@@ -95,7 +95,7 @@ export default function Footer() {
                 <li key={phone}>
                   <a
                     href={`tel:${phone}`}
-                    className="flex items-center gap-3 text-sm font-sans text-ivory/60 hover:text-gold transition-colors"
+                    className="min-h-[44px] inline-flex items-center gap-3 text-sm font-sans text-ivory/60 hover:text-gold transition-colors"
                   >
                     <Phone className="w-4 h-4 text-gold shrink-0" />
                     {phone}
@@ -105,7 +105,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${hotel.contact.email}`}
-                  className="flex items-center gap-3 text-sm font-sans text-ivory/60 hover:text-gold transition-colors"
+                  className="min-h-[44px] inline-flex items-center gap-3 text-sm font-sans text-ivory/60 hover:text-gold transition-colors"
                 >
                   <Mail className="w-4 h-4 text-gold shrink-0" />
                   {hotel.contact.email}

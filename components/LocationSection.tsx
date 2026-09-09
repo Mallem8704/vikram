@@ -87,7 +87,7 @@ export default function LocationSection({
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 font-mono text-base sm:text-lg font-semibold text-ivory">
                 <a
                   href="tel:9966731010"
-                  className="hover:text-gold transition-colors inline-flex items-center gap-2"
+                  className="min-h-[44px] hover:text-gold transition-colors inline-flex items-center gap-2"
                   aria-label="Call 9966731010"
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
@@ -95,7 +95,7 @@ export default function LocationSection({
                 </a>
                 <a
                   href="tel:9440222294"
-                  className="hover:text-gold transition-colors inline-flex items-center gap-2"
+                  className="min-h-[44px] hover:text-gold transition-colors inline-flex items-center gap-2"
                   aria-label="Call 9440222294"
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
@@ -109,7 +109,7 @@ export default function LocationSection({
               {/* Button 1: Call 9966731010 */}
               <a
                 href="tel:9966731010"
-                className="flex-1 min-w-[160px] inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl bg-gold text-black font-sans font-bold text-sm hover:bg-gold-light transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
+                className="flex-1 min-w-[160px] min-h-[48px] inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl bg-gold text-black font-sans font-bold text-sm hover:bg-gold-light transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
                 aria-label="Call 9966731010"
               >
                 <Phone className="w-4 h-4 text-black" aria-hidden="true" />
@@ -121,7 +121,7 @@ export default function LocationSection({
                 href="https://wa.me/919966731010?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[140px] inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl bg-[#25D366] text-white font-sans font-bold text-sm hover:bg-[#20bd5a] transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 cursor-pointer"
+                className="flex-1 min-w-[140px] min-h-[48px] inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl bg-[#25D366] text-white font-sans font-bold text-sm hover:bg-[#20bd5a] transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 cursor-pointer"
                 aria-label="Chat with Vikram Bliss Inn on WhatsApp"
               >
                 <MessageCircle className="w-4 h-4 text-white" aria-hidden="true" />
@@ -133,12 +133,12 @@ export default function LocationSection({
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-2xl border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
+                className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-2xl border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
                 aria-label="Get Directions to Vikram Bliss Inn on Google Maps"
               >
                 <Navigation className="w-4 h-4 text-gold" aria-hidden="true" />
                 <span>Get Directions</span>
-                <ExternalLink className="w-3.5 h-3.5 text-ivory/50" aria-hidden="true" />
+                <ExternalLink className="w-3.5 h-3.5 opacity-60 ml-0.5" aria-hidden="true" />
               </a>
             </div>
           </div>

@@ -63,7 +63,7 @@ export default function RootLayout({
       <body className="font-sans bg-ivory text-black antialiased">
         <BookingProvider>
           <Navbar />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen pb-16 sm:pb-20 md:pb-0">{children}</main>
           <Footer />
           <WhatsAppButton />
           <MobileBottomBar />

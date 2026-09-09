@@ -105,7 +105,7 @@ export default function FunctionHall() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 min-w-[160px] inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gold text-black font-sans font-bold text-sm hover:bg-gold-light transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="flex-1 min-w-[160px] min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gold text-black font-sans font-bold text-sm hover:bg-gold-light transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   aria-label="Enquire Now about the Function Hall on WhatsApp"
                 >
                   <MessageCircle className="w-4 h-4 text-black" />
@@ -115,7 +115,7 @@ export default function FunctionHall() {
                 {/* Call Hotel Contact */}
                 <a
                   href={`tel:${hotel.contact.phone[0]}`}
-                  className="inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl border border-white/20 text-ivory hover:text-gold hover:border-gold font-sans font-semibold text-sm hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl border border-white/20 text-ivory hover:text-gold hover:border-gold font-sans font-semibold text-sm hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   aria-label="Call Front Desk to enquire about Function Hall"
                 >
                   <Phone className="w-4 h-4 text-gold" />
@@ -125,7 +125,7 @@ export default function FunctionHall() {
                 {/* View Details Link */}
                 <Link
                   href="/function-hall"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 py-3.5 px-4 text-xs font-sans font-semibold text-ivory/70 hover:text-gold transition-colors"
+                  className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-1.5 py-3 px-4 text-xs font-sans font-semibold text-ivory/70 hover:text-gold transition-colors"
                 >
                   <span>More Hall Details</span>
                   <ArrowRight className="w-3.5 h-3.5" />

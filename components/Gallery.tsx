@@ -194,7 +194,7 @@ export default function Gallery({
                     setLightboxIndex(null);
                   }}
                   className={cn(
-                    "inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-sans font-semibold transition-all duration-200 cursor-pointer",
+                    "inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 min-h-[44px] rounded-full text-xs sm:text-sm font-sans font-semibold transition-all duration-200 cursor-pointer",
                     isActive
                       ? "bg-gold text-black shadow-gold scale-105"
                       : "bg-white/5 text-ivory/70 border border-white/10 hover:border-gold/50 hover:text-ivory hover:bg-white/10"
@@ -327,7 +327,7 @@ export default function Gallery({
                 type="button"
                 onClick={closeLightbox}
                 aria-label="Close photo viewer"
-                className="p-2 sm:p-2.5 rounded-full bg-white/10 hover:bg-gold hover:text-black text-ivory transition-colors cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-white/10 hover:bg-gold hover:text-black text-ivory transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
@@ -345,7 +345,7 @@ export default function Gallery({
                 type="button"
                 onClick={prevImage}
                 aria-label="Previous photo"
-                className="absolute left-2 sm:left-4 z-30 p-3 sm:p-3.5 rounded-full bg-black/70 hover:bg-gold hover:text-black text-ivory border border-white/20 transition-all duration-200 cursor-pointer shadow-xl backdrop-blur-md"
+                className="absolute left-2 sm:left-4 z-30 w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-black/70 hover:bg-gold hover:text-black text-ivory border border-white/20 transition-all duration-200 cursor-pointer shadow-xl backdrop-blur-md"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
@@ -369,7 +369,7 @@ export default function Gallery({
                 type="button"
                 onClick={nextImage}
                 aria-label="Next photo"
-                className="absolute right-2 sm:right-4 z-30 p-3 sm:p-3.5 rounded-full bg-black/70 hover:bg-gold hover:text-black text-ivory border border-white/20 transition-all duration-200 cursor-pointer shadow-xl backdrop-blur-md"
+                className="absolute right-2 sm:right-4 z-30 w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-black/70 hover:bg-gold hover:text-black text-ivory border border-white/20 transition-all duration-200 cursor-pointer shadow-xl backdrop-blur-md"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>

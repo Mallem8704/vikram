@@ -289,7 +289,7 @@ export default function RoomDetail({ room }: RoomDetailProps) {
                 <button
                   type="button"
                   onClick={() => openBookingModal({ roomType: room.name })}
-                  className="w-full flex items-center justify-center gap-2.5 py-4 bg-gold text-black font-sans font-bold text-sm rounded-xl hover:bg-gold-light transition-all shadow-gold focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
+                  className="w-full min-h-[48px] flex items-center justify-center gap-2.5 py-3.5 bg-gold text-black font-sans font-bold text-sm sm:text-base rounded-xl hover:bg-gold-light transition-all shadow-gold focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
                 >
                   <CalendarDays className="w-4 h-4 text-black" />
                   <span>Book This Room</span>
@@ -300,7 +300,7 @@ export default function RoomDetail({ room }: RoomDetailProps) {
                   href={`https://wa.me/${hotel.contact.whatsapp}?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20enquire%20about%20booking%20the%20${encodeURIComponent(room.name)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2.5 py-3 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm rounded-xl hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full min-h-[44px] flex items-center justify-center gap-2.5 py-3 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm rounded-xl hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <MessageCircle className="w-4 h-4 text-gold" />
                   <span>Quick WhatsApp</span>
@@ -309,7 +309,7 @@ export default function RoomDetail({ room }: RoomDetailProps) {
                 {/* Call Now Action */}
                 <a
                   href={`tel:${hotel.contact.phone[0]}`}
-                  className="w-full flex items-center justify-center gap-2 py-3 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm rounded-xl hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full min-h-[44px] flex items-center justify-center gap-2 py-3 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm rounded-xl hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <Phone className="w-4 h-4 text-gold" />
                   <span>Call: {hotel.contact.phone[0]}</span>
@@ -354,9 +354,9 @@ export default function RoomDetail({ room }: RoomDetailProps) {
             <button
               onClick={closeLightbox}
               aria-label="Close photo viewer"
-              className="p-2 rounded-full bg-white/10 hover:bg-gold hover:text-black text-ivory transition-colors"
+              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-white/10 hover:bg-gold hover:text-black text-ivory transition-colors"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             </button>
           </div>
 
@@ -370,7 +370,7 @@ export default function RoomDetail({ room }: RoomDetailProps) {
               <button
                 onClick={prevImage}
                 aria-label="Previous photo"
-                className="absolute left-2 sm:left-4 z-20 p-2.5 sm:p-3 rounded-full bg-black/60 hover:bg-gold hover:text-black text-ivory border border-white/20 transition-colors"
+                className="absolute left-2 sm:left-4 z-20 w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-black/70 hover:bg-gold hover:text-black text-ivory border border-white/20 transition-colors"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
@@ -393,7 +393,7 @@ export default function RoomDetail({ room }: RoomDetailProps) {
               <button
                 onClick={nextImage}
                 aria-label="Next photo"
-                className="absolute right-2 sm:right-4 z-20 p-2.5 sm:p-3 rounded-full bg-black/60 hover:bg-gold hover:text-black text-ivory border border-white/20 transition-colors"
+                className="absolute right-2 sm:right-4 z-20 w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-black/70 hover:bg-gold hover:text-black text-ivory border border-white/20 transition-colors"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>

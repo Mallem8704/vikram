@@ -112,7 +112,7 @@ export default function RoomCard({ room, className }: RoomCardProps) {
       <div className="p-6 pt-0">
         <Link
           href={`/rooms/${room.slug}`}
-          className="group/btn w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 bg-white/5 hover:bg-gold text-ivory hover:text-black font-sans font-semibold text-sm rounded-xl border border-white/15 hover:border-gold transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          className="group/btn w-full min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-5 bg-white/5 hover:bg-gold text-ivory hover:text-black font-sans font-semibold text-sm rounded-xl border border-white/15 hover:border-gold transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           aria-label={`${ctaLabel} - ${room.name}`}
         >
           <span>{ctaLabel}</span>

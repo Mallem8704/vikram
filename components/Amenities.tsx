@@ -98,13 +98,13 @@ export default function Amenities({
         </div>
 
         {/* Responsive Grid: Desktop 4 cols, Tablet 2 cols, Mobile 2 cols */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {AMENITY_ITEMS.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.name}
-                className="group relative flex flex-col justify-between p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border border-black/8 hover:border-gold/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_28px_rgba(212,175,55,0.18)] hover:-translate-y-1.5 transition-all duration-300 cursor-default"
+                className="group relative flex flex-col justify-between p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border border-black/8 hover:border-gold/50 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_28px_rgba(212,175,55,0.18)] hover:-translate-y-1.5 transition-all duration-300 cursor-default"
               >
                 <div>
                   {/* Gold Icon Accent */}

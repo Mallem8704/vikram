@@ -1,45 +1,57 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Home, BedDouble, Images, MapPin, Phone } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Phone, MessageCircle, CalendarDays } from "lucide-react";
 import { hotel } from "@/lib/data/hotel";
-
-const mobileNav = [
-  { label: "Home", href: "/", icon: Home },
-  { label: "Rooms", href: "/rooms", icon: BedDouble },
-  { label: "Gallery", href: "/gallery", icon: Images },
-  { label: "Location", href: "/location", icon: MapPin },
-];
+import { useBookingModal } from "@/context/BookingContext";
 
 export default function MobileBottomBar() {
-  const pathname = usePathname();
+  const { openBookingModal } = useBookingModal();
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-black/95 backdrop-blur-sm border-t border-white/10">
-      <div className="flex items-center">
-        {mobileNav.map(({ label, href, icon: Icon }) => (
-          <Link
-            key={href}
-            href={href}
-            className={cn(
-              "flex-1 flex flex-col items-center justify-center py-2.5 gap-1 transition-colors",
-              pathname === href ? "text-gold" : "text-ivory/50 hover:text-ivory"
-            )}
-          >
-            <Icon className="w-5 h-5" />
-            <span className="text-[10px] font-sans tracking-wide">{label}</span>
-          </Link>
-        ))}
-        {/* Call button */}
+    <div
+      role="region"
+      aria-label="Quick Action Bar"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#080808]/95 backdrop-blur-xl border-t border-white/15 px-3 py-2 sm:py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-[0_-8px_30px_rgba(0,0,0,0.8)]"
+    >
+      <div className="grid grid-cols-3 gap-2 max-w-lg mx-auto">
+        {/* 1. CALL CTA */}
         <a
-          href={`tel:${hotel.contact.phone[0]}`}
-          className="flex-1 flex flex-col items-center justify-center py-2.5 gap-1 text-[#25D366] hover:text-[#25D366]/80 transition-colors"
+          href="tel:9966731010"
+          className="flex flex-col items-center justify-center gap-1 h-12 min-h-[44px] rounded-xl bg-white/10 hover:bg-white/15 active:scale-95 text-ivory border border-white/15 transition-all text-center px-1 cursor-pointer"
+          aria-label="Call Hotel Reception at 9966731010"
         >
-          <Phone className="w-5 h-5" />
-          <span className="text-[10px] font-sans tracking-wide">Call</span>
+          <Phone className="w-4 h-4 text-gold shrink-0" aria-hidden="true" />
+          <span className="text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase">
+            CALL
+          </span>
         </a>
+
+        {/* 2. WHATSAPP CTA */}
+        <a
+          href={`https://wa.me/${hotel.contact.whatsapp}?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20enquire%20about%20a%20stay.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center justify-center gap-1 h-12 min-h-[44px] rounded-xl bg-[#25D366] hover:bg-[#20bd5a] active:scale-95 text-white transition-all text-center px-1 shadow-md cursor-pointer"
+          aria-label="Chat with Vikram Bliss Inn on WhatsApp"
+        >
+          <MessageCircle className="w-4 h-4 text-white shrink-0" aria-hidden="true" />
+          <span className="text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase">
+            WHATSAPP
+          </span>
+        </a>
+
+        {/* 3. BOOK NOW CTA */}
+        <button
+          type="button"
+          onClick={() => openBookingModal()}
+          className="flex flex-col items-center justify-center gap-1 h-12 min-h-[44px] rounded-xl bg-gold hover:bg-gold-light active:scale-95 text-black transition-all text-center px-1 shadow-gold font-sans font-bold cursor-pointer"
+          aria-label="Book Your Stay - Open Reservation Enquiry Modal"
+        >
+          <CalendarDays className="w-4 h-4 text-black shrink-0" aria-hidden="true" />
+          <span className="text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase">
+            BOOK NOW
+          </span>
+        </button>
       </div>
     </div>
   );

@@ -170,7 +170,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => openBookingModal()}
-                className="px-3 py-1.5 bg-gold text-black text-xs font-sans font-semibold rounded-lg hover:bg-gold-light transition-colors cursor-pointer"
+                className="h-11 min-h-[44px] px-3.5 bg-gold text-black text-xs font-sans font-bold rounded-xl hover:bg-gold-light active:scale-95 transition-all cursor-pointer flex items-center justify-center shadow-sm"
                 aria-label="Book Your Stay"
               >
                 Book
@@ -184,7 +184,7 @@ export default function Navbar() {
                 aria-controls="mobile-navigation-drawer"
                 aria-label={isMobileOpen ? "Close navigation menu" : "Open navigation menu"}
                 className={cn(
-                  "p-2 rounded-xl border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+                  "h-11 w-11 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer",
                   isMobileOpen
                     ? "bg-white/10 text-gold border-gold/40"
                     : isTransparent
@@ -211,15 +211,33 @@ export default function Navbar() {
         aria-modal="true"
         aria-label="Mobile Navigation Menu"
         className={cn(
-          "lg:hidden fixed inset-0 z-40 bg-black/98 backdrop-blur-xl flex flex-col justify-between transition-all duration-300 pt-24 pb-8 px-6",
+          "lg:hidden fixed inset-0 z-40 bg-black/98 backdrop-blur-2xl flex flex-col justify-between transition-all duration-300 pt-20 pb-8 px-5 sm:px-6 overflow-y-auto",
           isMobileOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-4 pointer-events-none"
         )}
       >
+        {/* Drawer Top Bar with Brand and Explicit Close Button */}
+        <div className="flex items-center justify-between pb-3 border-b border-white/10 shrink-0">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-gold" />
+            <span className="text-xs font-sans font-bold tracking-widest uppercase text-gold">
+              VIKRAM BLISS INN
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setIsMobileOpen(false)}
+            className="h-11 w-11 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl bg-white/10 text-ivory hover:text-gold hover:bg-white/15 active:scale-95 transition-all cursor-pointer"
+            aria-label="Close navigation menu"
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
         {/* Menu Navigation Links */}
-        <div className="flex flex-col gap-1 overflow-y-auto my-auto py-4">
-          <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-gold/80 mb-3 px-3">
+        <div className="flex flex-col gap-1 overflow-y-auto my-auto py-3">
+          <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-gold/80 mb-2 px-3">
             Navigation
           </p>
 

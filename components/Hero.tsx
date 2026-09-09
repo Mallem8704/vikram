@@ -83,7 +83,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => openBookingModal()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gold text-black font-sans font-bold text-sm sm:text-base rounded-xl hover:bg-gold-light transition-all duration-200 shadow-gold hover:shadow-gold-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gold text-black font-sans font-bold text-sm sm:text-base rounded-xl hover:bg-gold-light transition-all duration-200 shadow-gold hover:shadow-gold-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
                 aria-label="Book Your Stay"
               >
                 <CalendarDays className="w-4 h-4 text-black" />
@@ -93,7 +93,7 @@ export default function Hero() {
               {/* Secondary Button */}
               <Link
                 href="/rooms"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-ivory/30 text-ivory font-sans font-semibold text-sm sm:text-base rounded-xl hover:bg-white/10 hover:border-ivory/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-ivory/30 text-ivory font-sans font-semibold text-sm sm:text-base rounded-xl hover:bg-white/10 hover:border-ivory/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               >
                 <span>Explore Rooms</span>
                 <ArrowRight className="w-4 h-4 text-gold" />
