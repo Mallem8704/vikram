@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
-import { MessageCircle, Phone, ArrowRight } from "lucide-react";
+import { CalendarDays, Phone, ArrowRight } from "lucide-react";
 import { hotel } from "@/lib/data/hotel";
 import { cn } from "@/lib/utils";
+import { useBookingModal } from "@/context/BookingContext";
 
 interface BookingCTAProps {
   title?: string;
@@ -16,6 +19,7 @@ export default function BookingCTA({
   theme = "dark",
   className,
 }: BookingCTAProps) {
+  const { openBookingModal } = useBookingModal();
   const bgClass = {
     gold: "bg-gold-gradient",
     dark: "bg-black",
@@ -52,20 +56,19 @@ export default function BookingCTA({
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href={`https://wa.me/${hotel.contact.whatsapp}?text=Hi%2C%20I%20would%20like%20to%20book%20a%20room%20at%20Vikram%20Bliss%20Inn.`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => openBookingModal()}
             className={cn(
-              "flex items-center gap-2 px-7 py-3.5 rounded-xl font-sans font-semibold text-sm transition-colors",
+              "flex items-center gap-2 px-7 py-3.5 rounded-xl font-sans font-semibold text-sm transition-colors cursor-pointer",
               theme === "gold"
                 ? "bg-black text-gold hover:bg-black/80"
                 : "bg-gold text-black hover:bg-gold-light"
             )}
           >
-            <MessageCircle className="w-4 h-4" />
-            Book on WhatsApp
-          </a>
+            <CalendarDays className="w-4 h-4" />
+            <span>Book Your Stay</span>
+          </button>
           <a
             href={`tel:${hotel.contact.phone[0]}`}
             className={cn(

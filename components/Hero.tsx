@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,6 +12,7 @@ import {
 } from "lucide-react";
 import { hotel } from "@/lib/data/hotel";
 import { hotelImages } from "@/lib/data/images";
+import { useBookingModal } from "@/context/BookingContext";
 
 const compactAmenities = [
   { icon: BedDouble, label: "AC & Non-AC Rooms" },
@@ -19,6 +22,8 @@ const compactAmenities = [
 ];
 
 export default function Hero() {
+  const { openBookingModal } = useBookingModal();
+
   return (
     <section className="relative min-h-screen w-full flex items-center overflow-hidden bg-black">
       {/* ──────────────── Background: Real Hotel Exterior Photograph ──────────────── */}
@@ -75,16 +80,15 @@ export default function Hero() {
             {/* Action Buttons: Primary + Secondary */}
             <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-8 sm:mb-9 w-full sm:w-auto animate-hero-fade-up delay-300">
               {/* Primary Button */}
-              <Link
-                href={`https://wa.me/${hotel.contact.whatsapp}?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20book%20a%20stay.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gold text-black font-sans font-bold text-sm sm:text-base rounded-xl hover:bg-gold-light transition-all duration-200 shadow-gold hover:shadow-gold-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                aria-label="Book Your Stay on WhatsApp"
+              <button
+                type="button"
+                onClick={() => openBookingModal()}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gold text-black font-sans font-bold text-sm sm:text-base rounded-xl hover:bg-gold-light transition-all duration-200 shadow-gold hover:shadow-gold-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
+                aria-label="Book Your Stay"
               >
                 <CalendarDays className="w-4 h-4 text-black" />
                 <span>Book Your Stay</span>
-              </Link>
+              </button>
 
               {/* Secondary Button */}
               <Link

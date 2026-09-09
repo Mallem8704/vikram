@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileBottomBar from "@/components/MobileBottomBar";
+import BookingModal from "@/components/BookingModal";
+import { BookingProvider } from "@/context/BookingContext";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -59,11 +61,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="font-sans bg-ivory text-black antialiased">
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <MobileBottomBar />
+        <BookingProvider>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+          <MobileBottomBar />
+          <BookingModal />
+        </BookingProvider>
       </body>
     </html>
   );

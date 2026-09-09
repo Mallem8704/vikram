@@ -7,6 +7,7 @@ import { Menu, X, ArrowRight, Phone, CalendarDays } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { hotel } from "@/lib/data/hotel";
 import Logo from "@/components/Logo";
+import { useBookingModal } from "@/context/BookingContext";
 
 interface NavItem {
   label: string;
@@ -28,6 +29,7 @@ export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
   const pathname = usePathname();
+  const { openBookingModal } = useBookingModal();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -151,30 +153,28 @@ export default function Navbar() {
 
             {/* RIGHT: Book Your Stay CTA (Desktop) */}
             <div className="hidden lg:flex items-center gap-4 shrink-0">
-              <Link
-                href={`https://wa.me/${hotel.contact.whatsapp}?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20book%20a%20stay.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-black text-sm font-sans font-semibold rounded-xl hover:bg-gold-light transition-all duration-200 shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                aria-label="Book Your Stay at Vikram Bliss Inn on WhatsApp"
+              <button
+                type="button"
+                onClick={() => openBookingModal()}
+                className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-black text-sm font-sans font-semibold rounded-xl hover:bg-gold-light transition-all duration-200 shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
+                aria-label="Book Your Stay at Vikram Bliss Inn"
               >
                 <CalendarDays className="w-4 h-4 text-black" />
                 <span>Book Your Stay</span>
                 <ArrowRight className="w-3.5 h-3.5 text-black group-hover:translate-x-0.5 transition-transform" />
-              </Link>
+              </button>
             </div>
 
             {/* Mobile Hamburger Menu Button */}
             <div className="flex items-center gap-2 lg:hidden">
-              <Link
-                href={`https://wa.me/${hotel.contact.whatsapp}?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20book%20a%20stay.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-1.5 bg-gold text-black text-xs font-sans font-semibold rounded-lg hover:bg-gold-light transition-colors"
-                aria-label="Book Your Stay on WhatsApp"
+              <button
+                type="button"
+                onClick={() => openBookingModal()}
+                className="px-3 py-1.5 bg-gold text-black text-xs font-sans font-semibold rounded-lg hover:bg-gold-light transition-colors cursor-pointer"
+                aria-label="Book Your Stay"
               >
                 Book
-              </Link>
+              </button>
 
               <button
                 ref={menuButtonRef}
@@ -254,16 +254,17 @@ export default function Navbar() {
 
         {/* Mobile Action Center & Quick Contact */}
         <div className="flex flex-col gap-3 pt-6 border-t border-white/10 shrink-0">
-          <Link
-            href={`https://wa.me/${hotel.contact.whatsapp}?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20book%20a%20stay.`}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsMobileOpen(false)}
-            className="w-full flex items-center justify-center gap-2.5 py-4 bg-gold text-black font-sans font-bold text-base rounded-2xl shadow-gold hover:bg-gold-light transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          <button
+            type="button"
+            onClick={() => {
+              setIsMobileOpen(false);
+              openBookingModal();
+            }}
+            className="w-full flex items-center justify-center gap-2.5 py-4 bg-gold text-black font-sans font-bold text-base rounded-2xl shadow-gold hover:bg-gold-light transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
           >
             <CalendarDays className="w-5 h-5 text-black" />
             <span>Book Your Stay</span>
-          </Link>
+          </button>
 
           <a
             href={`tel:${hotel.contact.phone[0]}`}

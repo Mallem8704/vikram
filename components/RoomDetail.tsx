@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { formatCurrency } from "@/lib/utils";
 import { hotel } from "@/lib/data/hotel";
+import { useBookingModal } from "@/context/BookingContext";
 import type { Room } from "@/types";
 
 interface RoomDetailProps {
@@ -45,6 +46,7 @@ function getAmenityIcon(label: string) {
 }
 
 export default function RoomDetail({ room }: RoomDetailProps) {
+  const { openBookingModal } = useBookingModal();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const images =
@@ -283,24 +285,34 @@ export default function RoomDetail({ room }: RoomDetailProps) {
 
               {/* Booking Actions */}
               <div className="flex flex-col gap-3">
-                {/* WhatsApp Action */}
+                {/* Book This Room CTA (Triggers Modal with pre-selected room) */}
+                <button
+                  type="button"
+                  onClick={() => openBookingModal({ roomType: room.name })}
+                  className="w-full flex items-center justify-center gap-2.5 py-4 bg-gold text-black font-sans font-bold text-sm rounded-xl hover:bg-gold-light transition-all shadow-gold focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
+                >
+                  <CalendarDays className="w-4 h-4 text-black" />
+                  <span>Book This Room</span>
+                </button>
+
+                {/* Quick WhatsApp Action */}
                 <a
-                  href={`https://wa.me/${hotel.contact.whatsapp}?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20book%20the%20${encodeURIComponent(room.name)}.`}
+                  href={`https://wa.me/${hotel.contact.whatsapp}?text=Hello%20Vikram%20Bliss%20Inn%2C%20I%20would%20like%20to%20enquire%20about%20booking%20the%20${encodeURIComponent(room.name)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2.5 py-4 bg-gold text-black font-sans font-bold text-sm rounded-xl hover:bg-gold-light transition-all shadow-gold focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full flex items-center justify-center gap-2.5 py-3 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm rounded-xl hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
                 >
-                  <MessageCircle className="w-4 h-4 text-black" />
-                  <span>WhatsApp Booking</span>
+                  <MessageCircle className="w-4 h-4 text-gold" />
+                  <span>Quick WhatsApp</span>
                 </a>
 
                 {/* Call Now Action */}
                 <a
                   href={`tel:${hotel.contact.phone[0]}`}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm rounded-xl hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
+                  className="w-full flex items-center justify-center gap-2 py-3 border border-white/20 hover:border-gold text-ivory hover:text-gold font-sans font-semibold text-sm rounded-xl hover:bg-white/5 transition-all focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <Phone className="w-4 h-4 text-gold" />
-                  <span>Call Now: {hotel.contact.phone[0]}</span>
+                  <span>Call: {hotel.contact.phone[0]}</span>
                 </a>
               </div>
 
