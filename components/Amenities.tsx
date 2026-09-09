@@ -11,7 +11,7 @@ export default function Amenities({ preview = false }: AmenitiesProps) {
   const displayed = preview ? amenities.slice(0, 8) : amenities;
 
   return (
-    <section className="section-padding bg-ivory">
+    <section id="amenities" className="section-padding bg-ivory scroll-mt-20">
       <div className="section-container">
         <SectionHeading
           eyebrow="What We Offer"
