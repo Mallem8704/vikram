@@ -7,6 +7,7 @@ interface SectionHeadingProps {
   align?: "left" | "center" | "right";
   theme?: "light" | "dark";
   className?: string;
+  as?: "h1" | "h2" | "h3";
 }
 
 export default function SectionHeading({
@@ -16,6 +17,7 @@ export default function SectionHeading({
   align = "center",
   theme = "light",
   className,
+  as: Component = "h2",
 }: SectionHeadingProps) {
   const isDark = theme === "dark";
 
@@ -39,14 +41,14 @@ export default function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2
+      <Component
         className={cn(
           "font-serif text-display-sm md:text-display-md font-semibold",
           isDark ? "text-ivory" : "text-black"
         )}
       >
         {title}
-      </h2>
+      </Component>
       {align === "center" ? (
         <span className="gold-divider-center mt-3" />
       ) : (

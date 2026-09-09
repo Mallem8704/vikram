@@ -7,7 +7,17 @@ import BookingCTA from "@/components/BookingCTA";
 export const metadata: Metadata = {
   title: "Photo Gallery",
   description:
-    "Explore authentic photographs of Vikram Bliss Inn in Kadiri, Andhra Pradesh. High-resolution gallery of our Double AC rooms, Non-AC rooms, Suite rooms, Grand Function Hall, and exterior building.",
+    "Explore authentic photographs of VIKRAM BLISS INN in Kadiri, Andhra Pradesh. View real photos of our exterior, Double AC rooms, Non-AC rooms, Suite rooms, and Function Hall.",
+  alternates: {
+    canonical: "/gallery",
+  },
+  openGraph: {
+    title: "Photo Gallery | VIKRAM BLISS INN",
+    description:
+      "Authentic photos of VIKRAM BLISS INN hotel exterior, rooms, suites, and function hall in Kadiri.",
+    url: "https://vikramblissinn.in/gallery",
+    images: ["/images/hotel/exterior.jpg"],
+  },
 };
 
 export default function GalleryPage() {
@@ -30,6 +40,7 @@ export default function GalleryPage() {
 
       {/* ──────────────── 2. Filterable Portfolio Gallery Component ──────────────── */}
       <Gallery
+        as="h1"
         preview={false}
         title="Hotel Photography Portfolio"
         subtitle="Filter by category to view our building exterior, double & non-AC rooms, executive suites, or function hall."

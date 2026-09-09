@@ -9,9 +9,12 @@ import BookingCTA from "@/components/BookingCTA";
 import { Sparkles, ShieldCheck, Heart, Moon } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Vikram Bliss Inn | Premium Hotel in Kadiri, Andhra Pradesh",
+  title: "VIKRAM BLISS INN | Comfortable Stay in Kadiri",
   description:
-    "Vikram Bliss Inn – comfortable Double AC & Non-AC rooms (2 beds), Suite room, and Grand Function Hall in Kadiri, Andhra Pradesh. Genuine hospitality, clean rooms, prime location near Police Line & Subjail.",
+    "VIKRAM BLISS INN offers comfortable AC, Non-AC and Suite rooms in Kadiri, Andhra Pradesh, with Wi-Fi, LED TV, hot water, parking and function hall facilities.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function HomePage() {

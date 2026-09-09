@@ -23,7 +23,17 @@ import { hotelImages } from "@/lib/data/images";
 export const metadata: Metadata = {
   title: "Function Hall",
   description:
-    "Book the Function Hall at Vikram Bliss Inn, Kadiri. ₹20,000/day. Perfect for weddings, engagements, birthday celebrations, meetings, and family functions.",
+    "Book the Grand Function Hall at VIKRAM BLISS INN, Kadiri. ₹20,000/day. Ideal for weddings, engagements, birthday celebrations, meetings, and family functions.",
+  alternates: {
+    canonical: "/function-hall",
+  },
+  openGraph: {
+    title: "Function Hall | VIKRAM BLISS INN",
+    description:
+      "Grand Function Hall in Kadiri for weddings, engagements, and events. ₹20,000/day.",
+    url: "https://vikramblissinn.in/function-hall",
+    images: ["/images/hotel/function-hall.jpg"],
+  },
 };
 
 const perfectForList = [

@@ -9,7 +9,17 @@ import { Landmark, Bus, Train, MapPin, Car, Clock, ChevronRight } from "lucide-r
 export const metadata: Metadata = {
   title: "Location & Contact",
   description:
-    "Find Vikram Bliss Inn in Kadiri, Andhra Pradesh. Contact details, phone numbers, WhatsApp, Google Maps location, and nearby landmarks including Sri Kodandarama Swamy Temple.",
+    "Find VIKRAM BLISS INN in Kadiri, Andhra Pradesh. Located near Police Line & Subjail, Christian Colony. Phone: +91 99667 31010. Google Maps directions and nearby landmarks.",
+  alternates: {
+    canonical: "/location",
+  },
+  openGraph: {
+    title: "Location & Contact | VIKRAM BLISS INN",
+    description:
+      "Hotel address, contact numbers, WhatsApp, and Google Maps directions for VIKRAM BLISS INN in Kadiri.",
+    url: "https://vikramblissinn.in/location",
+    images: ["/images/hotel/exterior.jpg"],
+  },
 };
 
 const nearbyLandmarks = [
@@ -80,6 +90,7 @@ export default function LocationPage() {
       <div className="pt-8 pb-10 bg-black">
         <div className="section-container">
           <SectionHeading
+            as="h1"
             eyebrow="Reach Us Easily"
             title="Location & Contact"
             subtitle="Centrally located in Kadiri, Andhra Pradesh. Close to major transit hubs and sacred shrines."

@@ -41,6 +41,7 @@ interface GalleryProps {
   title?: string;
   subtitle?: string;
   className?: string;
+  as?: "h1" | "h2";
 }
 
 export default function Gallery({
@@ -48,6 +49,7 @@ export default function Gallery({
   title = "Hotel Photo Gallery",
   subtitle = "Authentic photographs of Vikram Bliss Inn — explore our rooms, executive suites, hotel building, and event spaces.",
   className,
+  as: Component = "h2",
 }: GalleryProps) {
   const [activeCategory, setActiveCategory] = useState<GalleryCategoryId>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -174,9 +176,9 @@ export default function Gallery({
               <span className="w-5 h-0.5 bg-gold rounded-full" />
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-ivory tracking-tight mb-4">
+            <Component className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-ivory tracking-tight mb-4">
               {title}
-            </h2>
+            </Component>
 
             <p className="font-sans text-sm sm:text-base text-ivory/70 leading-relaxed max-w-2xl mx-auto">
               {subtitle}

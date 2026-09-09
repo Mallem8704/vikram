@@ -6,7 +6,17 @@ import { getRoomBySlug } from "@/lib/data/rooms";
 export const metadata: Metadata = {
   title: "Double Room (AC)",
   description:
-    "Book the Double Room (AC) at Vikram Bliss Inn, Kadiri. Modern, air-conditioned, with wall-mounted LED TV, Wi-Fi, 24-hr hot water, and daily housekeeping. ₹1,500/night.",
+    "Book the Double Room (AC) at VIKRAM BLISS INN, Kadiri. Air-conditioned room with double bed, LED TV, hot water, and Wi-Fi at ₹1,500/night.",
+  alternates: {
+    canonical: "/rooms/double-room",
+  },
+  openGraph: {
+    title: "Double Room (AC) | VIKRAM BLISS INN",
+    description:
+      "Comfortable air-conditioned double room in Kadiri at ₹1,500/night.",
+    url: "https://vikramblissinn.in/rooms/double-room",
+    images: ["/images/rooms/double-ac-1.jpg"],
+  },
 };
 
 export default function DoubleRoomPage() {

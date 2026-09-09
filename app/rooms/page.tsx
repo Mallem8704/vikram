@@ -7,9 +7,19 @@ import { rooms } from "@/lib/data/rooms";
 import { CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Rooms",
+  title: "Rooms & Suites",
   description:
-    "Explore our range of rooms at Vikram Bliss Inn — Deluxe Double AC, Standard Non-AC, and Executive Suite. Book the room that fits your needs and budget.",
+    "Explore comfortable AC, Non-AC and Suite rooms at VIKRAM BLISS INN in Kadiri. Rates starting from ₹1,300/night with LED TV, Wi-Fi, and 24/7 hot water.",
+  alternates: {
+    canonical: "/rooms",
+  },
+  openGraph: {
+    title: "Rooms & Suites | VIKRAM BLISS INN",
+    description:
+      "Comfortable Double AC, Non-AC, and Suite accommodations in Kadiri. Starting at ₹1,300/night.",
+    url: "https://vikramblissinn.in/rooms",
+    images: ["/images/rooms/double-ac-1.jpg"],
+  },
 };
 
 const whyChooseUs = [
@@ -28,6 +38,7 @@ export default function RoomsPage() {
       <div className="pt-24 md:pt-32 pb-12 bg-black">
         <div className="section-container">
           <SectionHeading
+            as="h1"
             eyebrow="Accommodation"
             title="Our Rooms & Suites"
             subtitle="We offer a range of well-maintained rooms designed to ensure a comfortable and restful stay — at every budget."
