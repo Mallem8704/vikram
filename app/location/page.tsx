@@ -121,7 +121,7 @@ export default function LocationPage() {
               return (
                 <div
                   key={landmark.name}
-                  className="bg-white p-6 rounded-2xl border border-ivory-muted shadow-card hover:shadow-card-hover transition-all"
+                  className="bg-white p-6 rounded-xl border border-ivory-muted shadow-card hover:shadow-card-hover transition-all"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-gold" />

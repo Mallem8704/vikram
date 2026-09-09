@@ -22,13 +22,8 @@ export default function HotelJsonLd() {
       addressRegion: "Andhra Pradesh",
       addressCountry: "IN",
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 14.1167,
-      longitude: 78.1579,
-    },
     hasMap:
-      "https://maps.google.com/?q=Vikram+Bliss+Inn+Christian+Colony+Near+Subjail+Kadiri+515591",
+      "https://www.google.com/maps/search/?api=1&query=Vikram+Bliss+Inn+Christian+Colony+Near+Subjail+Kadiri+515591",
     priceRange: "₹1,300 - ₹20,000",
     currenciesAccepted: "INR",
     paymentAccepted: "Cash, UPI",
@@ -118,7 +113,7 @@ export default function HotelJsonLd() {
       },
       {
         "@type": "HotelRoom",
-        name: "Non-AC Room",
+        name: "Non-AC Room (2 Beds)",
         description:
           "A clean and comfortable two-bed option for guests looking for an affordable stay.",
         bed: {

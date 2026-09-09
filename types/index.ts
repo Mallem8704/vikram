@@ -71,10 +71,10 @@ export interface HotelInfo {
     googleMapsUrl: string;
     googleMapsEmbed: string;
   };
-  stats: {
-    totalRooms: number;
-    yearsEstablished: number;
-    functionHallCapacity: number;
+  stats?: {
+    totalRooms?: number;
+    yearsEstablished?: number;
+    functionHallCapacity?: number;
   };
 }
 

@@ -29,9 +29,9 @@ export const ROOM_OPTIONS = [
   },
   {
     id: "non-ac",
-    name: "Non-AC Room",
+    name: "Non-AC Room (2 Beds)",
     rate: "₹1,300/night",
-    label: "Non-AC Room – ₹1,300/night",
+    label: "Non-AC Room (2 Beds) – ₹1,300/night",
   },
   {
     id: "suite",

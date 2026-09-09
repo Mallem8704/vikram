@@ -283,7 +283,7 @@ export default function Navbar() {
                   setIsMobileOpen(false);
                   openBookingModal();
                 }}
-                className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-gold text-black font-sans font-semibold text-xs tracking-wider uppercase rounded-xl shadow-sm hover:bg-gold-light active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
+                className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-gold text-black font-sans font-semibold text-xs tracking-wider uppercase rounded-lg shadow-sm hover:bg-gold-light active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
               >
                 <CalendarDays className="w-4 h-4 text-black" />
                 <span>Book Your Stay</span>
@@ -291,14 +291,14 @@ export default function Navbar() {
 
               <a
                 href={`tel:${hotel.contact.phone[0]}`}
-                className="w-full flex items-center justify-center gap-2 py-3 border border-white/20 text-ivory font-sans font-medium text-xs tracking-wider uppercase rounded-xl hover:bg-white/5 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                className="w-full flex items-center justify-center gap-2 py-3 border border-white/20 text-ivory font-sans font-semibold text-xs tracking-wider uppercase rounded-lg hover:bg-white/5 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
                 <Phone className="w-3.5 h-3.5 text-gold" />
                 <span>Call: {hotel.contact.phone[0]}</span>
               </a>
 
-              <p className="text-[11px] font-sans text-center text-ivory/40 mt-1">
-                Christian Colony, Near Subjail, Kadiri • 24/7 Front Desk
+              <p className="text-[11px] font-sans text-center text-ivory/50 mt-1">
+                Police Line, Christian Colony, Near Subjail, Kadiri • 24/7 Front Desk
               </p>
             </div>
           </motion.div>

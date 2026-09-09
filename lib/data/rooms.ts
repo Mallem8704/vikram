@@ -46,7 +46,7 @@ export const rooms: Room[] = [
   {
     id: "non-ac",
     slug: "non-ac",
-    name: "Non-AC Room",
+    name: "Non-AC Room (2 Beds)",
     tagline: "Simple. Clean. Affordable.",
     description: "A clean and comfortable two-bed option for guests looking for an affordable stay.",
     longDescription:
