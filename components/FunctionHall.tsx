@@ -12,6 +12,7 @@ import {
   Users,
   PartyPopper,
 } from "lucide-react";
+import { ScrollReveal } from "@/components/motion/MotionWrapper";
 import { hotelImages } from "@/lib/data/images";
 import { hotel } from "@/lib/data/hotel";
 
@@ -32,7 +33,7 @@ export default function FunctionHall() {
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Details, Perfect For List, Pricing & Enquire CTAs */}
-          <div className="lg:col-span-6 flex flex-col items-start">
+          <ScrollReveal className="lg:col-span-6 flex flex-col items-start">
             {/* Gold Eyebrow */}
             <div className="inline-flex items-center gap-2 mb-3">
               <span className="w-6 h-0.5 bg-gold rounded-full" />
@@ -105,7 +106,7 @@ export default function FunctionHall() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 min-w-[160px] min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gold text-black font-sans font-bold text-sm hover:bg-gold-light transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="flex-1 min-w-[160px] min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gold text-black font-sans font-bold text-sm hover:bg-gold-light hover:-translate-y-0.5 active:scale-[0.98] transition-all shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   aria-label="Enquire Now about the Function Hall on WhatsApp"
                 >
                   <MessageCircle className="w-4 h-4 text-black" />
@@ -115,7 +116,7 @@ export default function FunctionHall() {
                 {/* Call Hotel Contact */}
                 <a
                   href={`tel:${hotel.contact.phone[0]}`}
-                  className="min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl border border-white/20 text-ivory hover:text-gold hover:border-gold font-sans font-semibold text-sm hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl border border-white/20 text-ivory hover:text-gold hover:border-gold hover:-translate-y-0.5 active:scale-[0.98] font-sans font-semibold text-sm hover:bg-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   aria-label="Call Front Desk to enquire about Function Hall"
                 >
                   <Phone className="w-4 h-4 text-gold" />
@@ -125,36 +126,27 @@ export default function FunctionHall() {
                 {/* View Details Link */}
                 <Link
                   href="/function-hall"
-                  className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-1.5 py-3 px-4 text-xs font-sans font-semibold text-ivory/70 hover:text-gold transition-colors"
+                  className="group w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-1.5 py-3 px-4 text-xs font-sans font-semibold text-ivory/70 hover:text-gold transition-colors"
                 >
                   <span>More Hall Details</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
                 </Link>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Column: Premium Event Hall Visual / Photograph Slot */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-black group">
+          <ScrollReveal delay={0.15} className="lg:col-span-6 relative">
+            <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-black group hover:-translate-y-1 transition-all duration-300">
               <Image
                 src={hotelImages.functionHall.main}
                 alt={hotelImages.functionHall.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-cover object-center group-hover:scale-[1.035] transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] motion-reduce:transform-none"
+                loading="lazy"
               />
 
-              {/* Soft Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none" />
-
-              {/* Top Badge */}
-              <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md border border-gold/40 text-gold text-xs font-sans font-semibold px-3.5 py-1.5 rounded-full flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-gold" />
-                <span>Vikram Bliss Inn Event Space</span>
-              </div>
-
-              {/* Bottom Caption */}
               <div className="absolute bottom-4 left-4 right-4 bg-black/85 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 flex items-center justify-between">
                 <div>
                   <p className="font-serif text-base text-ivory font-semibold">
@@ -170,7 +162,7 @@ export default function FunctionHall() {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

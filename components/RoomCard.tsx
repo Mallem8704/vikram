@@ -38,7 +38,7 @@ export default function RoomCard({ room, className }: RoomCardProps) {
   return (
     <article
       className={cn(
-        "group flex flex-col justify-between rounded-2xl overflow-hidden bg-[#121212] border border-white/10 hover:border-gold/50 shadow-card hover:shadow-card-hover transition-all duration-300 card-hover",
+        "group flex flex-col justify-between rounded-2xl overflow-hidden bg-[#121212] border border-white/10 hover:border-gold/50 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300",
         className
       )}
     >
@@ -49,7 +49,7 @@ export default function RoomCard({ room, className }: RoomCardProps) {
           alt={altText}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+          className="object-cover object-center group-hover:scale-[1.035] transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] motion-reduce:transform-none"
           loading="lazy"
         />
 
@@ -112,11 +112,11 @@ export default function RoomCard({ room, className }: RoomCardProps) {
       <div className="p-6 pt-0">
         <Link
           href={`/rooms/${room.slug}`}
-          className="group/btn w-full min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-5 bg-white/5 hover:bg-gold text-ivory hover:text-black font-sans font-semibold text-sm rounded-xl border border-white/15 hover:border-gold transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          className="group/btn w-full min-h-[44px] inline-flex items-center justify-center gap-2 py-3.5 px-5 bg-white/5 hover:bg-gold text-ivory hover:text-black font-sans font-semibold text-sm rounded-xl border border-white/15 hover:border-gold hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           aria-label={`${ctaLabel} - ${room.name}`}
         >
           <span>{ctaLabel}</span>
-          <ArrowRight className="w-4 h-4 text-gold group-hover/btn:text-black group-hover/btn:translate-x-1 transition-all duration-200" />
+          <ArrowRight className="w-4 h-4 text-gold group-hover/btn:text-black group-hover/btn:translate-x-1 transition-transform duration-200" />
         </Link>
       </div>
     </article>

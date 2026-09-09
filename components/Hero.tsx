@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   CalendarDays,
   ArrowRight,
@@ -23,13 +24,21 @@ const compactAmenities = [
 
 export default function Hero() {
   const { openBookingModal } = useBookingModal();
+  const shouldReduceMotion = useReducedMotion();
+
+  const ease = [0.22, 1, 0.36, 1] as const;
 
   return (
     <section className="relative min-h-screen w-full flex items-center overflow-hidden bg-black">
       {/* ──────────────── Background: Real Hotel Exterior Photograph ──────────────── */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Subtle entrance scale-in animation */}
-        <div className="relative w-full h-full animate-hero-scale-in">
+        {/* Subtle, restrained initial settle animation */}
+        <motion.div
+          initial={shouldReduceMotion ? { scale: 1, opacity: 1 } : { scale: 1.04, opacity: 0.85 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5, ease }}
+          className="relative w-full h-full"
+        >
           <Image
             src={hotelImages.exterior.hero}
             alt="Vikram Bliss Inn and Vikram Arcade real hotel building exterior in Kadiri"
@@ -38,7 +47,7 @@ export default function Hero() {
             sizes="100vw"
             className="object-cover object-[70%_center] md:object-[80%_center] lg:object-[right_center]"
           />
-        </div>
+        </motion.div>
 
         {/* Desktop Gradient: Dark overlay from Left to Right (40% text, 60% building) */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 via-45% to-transparent hidden lg:block pointer-events-none" />
@@ -59,49 +68,84 @@ export default function Hero() {
           {/* Left Column: Occupies approx 40% (5 of 12 cols on desktop) */}
           <div className="lg:col-span-6 xl:col-span-5 flex flex-col items-start text-left">
             {/* Small Gold Eyebrow */}
-            <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 animate-hero-fade-up">
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.1, ease }}
+              className="inline-flex items-center gap-2 mb-3 sm:mb-4"
+            >
               <span className="w-6 h-0.5 bg-gold rounded-full" />
               <p className="text-gold text-xs sm:text-sm font-sans font-semibold tracking-[0.25em] uppercase">
                 VIKRAM BLISS INN
               </p>
-            </div>
+            </motion.div>
 
             {/* Main Heading */}
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-ivory font-bold leading-[1.08] mb-4 sm:mb-5 animate-hero-fade-up delay-100">
+            <motion.h1
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.2, ease }}
+              className="font-serif text-4xl sm:text-5xl md:text-6xl text-ivory font-bold leading-[1.08] mb-4 sm:mb-5"
+            >
               Experience Comfort, <br />
               <span className="text-gold italic font-normal">Embrace Bliss</span>
-            </h1>
+            </motion.h1>
 
             {/* Subheading */}
-            <p className="font-sans text-base sm:text-lg text-ivory/80 leading-relaxed max-w-lg mb-7 sm:mb-8 animate-hero-fade-up delay-200">
+            <motion.p
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.32, ease }}
+              className="font-sans text-base sm:text-lg text-ivory/80 leading-relaxed max-w-lg mb-7 sm:mb-8"
+            >
               A comfortable and welcoming stay in the heart of Kadiri.
-            </p>
+            </motion.p>
 
             {/* Action Buttons: Primary + Secondary */}
-            <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-8 sm:mb-9 w-full sm:w-auto animate-hero-fade-up delay-300">
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.44, ease }}
+              className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-8 sm:mb-9 w-full sm:w-auto"
+            >
               {/* Primary Button */}
-              <button
+              <motion.button
                 type="button"
+                whileHover={shouldReduceMotion ? {} : { y: -1 }}
+                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+                transition={{ duration: 0.15 }}
                 onClick={() => openBookingModal()}
-                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gold text-black font-sans font-bold text-sm sm:text-base rounded-xl hover:bg-gold-light transition-all duration-200 shadow-gold hover:shadow-gold-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gold text-black font-sans font-bold text-sm sm:text-base rounded-xl hover:bg-gold-light transition-colors shadow-gold hover:shadow-gold-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
                 aria-label="Book Your Stay"
               >
                 <CalendarDays className="w-4 h-4 text-black" />
                 <span>Book Your Stay</span>
-              </button>
+              </motion.button>
 
               {/* Secondary Button */}
-              <Link
-                href="/rooms"
-                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-ivory/30 text-ivory font-sans font-semibold text-sm sm:text-base rounded-xl hover:bg-white/10 hover:border-ivory/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+              <motion.div
+                whileHover={shouldReduceMotion ? {} : { y: -1 }}
+                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+                transition={{ duration: 0.15 }}
+                className="w-full sm:w-auto"
               >
-                <span>Explore Rooms</span>
-                <ArrowRight className="w-4 h-4 text-gold" />
-              </Link>
-            </div>
+                <Link
+                  href="/rooms"
+                  className="group w-full min-h-[48px] inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-ivory/30 text-ivory font-sans font-semibold text-sm sm:text-base rounded-xl hover:bg-white/10 hover:border-ivory/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                >
+                  <span>Explore Rooms</span>
+                  <ArrowRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform duration-200" />
+                </Link>
+              </motion.div>
+            </motion.div>
 
             {/* Compact Amenities with Subtle Gold Icons */}
-            <div className="pt-5 border-t border-white/15 w-full max-w-lg animate-hero-fade-up delay-400">
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.56, ease }}
+              className="pt-5 border-t border-white/15 w-full max-w-lg"
+            >
               <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2.5">
                 {compactAmenities.map(({ icon: Icon, label }) => (
                   <div key={label} className="flex items-center gap-2">
@@ -114,10 +158,10 @@ export default function Hero() {
               </div>
 
               {/* Small Brand Line */}
-              <p className="text-[11px] font-sans font-semibold tracking-[0.25em] uppercase text-gold/90 mt-4 animate-hero-fade-up delay-500">
+              <p className="text-[11px] font-sans font-semibold tracking-[0.25em] uppercase text-gold/90 mt-4">
                 GOOD STAYS. BRIGHTER DAYS.
               </p>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Column: Open space on desktop so the hotel image (~60%) dominates cleanly */}

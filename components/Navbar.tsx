@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Menu, X, ArrowRight, Phone, CalendarDays } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { hotel } from "@/lib/data/hotel";
@@ -29,6 +30,7 @@ export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
   const pathname = usePathname();
+  const shouldReduceMotion = useReducedMotion();
   const { openBookingModal } = useBookingModal();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -140,7 +142,9 @@ export default function Navbar() {
 
                       {/* Gold active navigation indicator line */}
                       {active && (
-                        <span
+                        <motion.span
+                          layoutId={shouldReduceMotion ? undefined : "navbar-active-indicator"}
+                          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                           aria-hidden="true"
                           className="absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-gold-light via-gold to-gold-dark rounded-full shadow-gold-sm"
                         />
@@ -156,7 +160,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => openBookingModal()}
-                className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-black text-sm font-sans font-semibold rounded-xl hover:bg-gold-light transition-all duration-200 shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
+                className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-black text-sm font-sans font-semibold rounded-xl hover:bg-gold-light hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black cursor-pointer"
                 aria-label="Book Your Stay at Vikram Bliss Inn"
               >
                 <CalendarDays className="w-4 h-4 text-black" />
@@ -203,100 +207,103 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Slide-Down / Full-Screen Navigation Drawer */}
-      <div
-        id="mobile-navigation-drawer"
-        ref={mobileMenuRef}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile Navigation Menu"
-        className={cn(
-          "lg:hidden fixed inset-0 z-40 bg-black/98 backdrop-blur-2xl flex flex-col justify-between transition-all duration-300 pt-20 pb-8 px-5 sm:px-6 overflow-y-auto",
-          isMobileOpen
-            ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 -translate-y-4 pointer-events-none"
+      {/* Mobile Slide-Down / Full-Screen Navigation Drawer with AnimatePresence */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <motion.div
+            id="mobile-navigation-drawer"
+            ref={mobileMenuRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile Navigation Menu"
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:hidden fixed inset-0 z-40 bg-black/98 backdrop-blur-2xl flex flex-col justify-between pt-20 pb-8 px-5 sm:px-6 overflow-y-auto"
+          >
+            {/* Drawer Top Bar with Brand and Explicit Close Button */}
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 shrink-0">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold" />
+                <span className="text-xs font-sans font-bold tracking-widest uppercase text-gold">
+                  VIKRAM BLISS INN
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsMobileOpen(false)}
+                className="h-11 w-11 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl bg-white/10 text-ivory hover:text-gold hover:bg-white/15 active:scale-95 transition-all cursor-pointer"
+                aria-label="Close navigation menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Menu Navigation Links */}
+            <div className="flex flex-col gap-1 overflow-y-auto my-auto py-3">
+              <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-gold/80 mb-2 px-3">
+                Navigation
+              </p>
+
+              <ul className="flex flex-col divide-y divide-white/5">
+                {navItems.map((item) => {
+                  const active = isItemActive(item);
+                  return (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMobileOpen(false)}
+                        aria-current={active ? "page" : undefined}
+                        className={cn(
+                          "flex items-center justify-between py-3.5 px-3 rounded-xl font-serif text-2xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold",
+                          active
+                            ? "text-gold font-bold bg-white/5 pl-4"
+                            : "text-ivory/80 hover:text-gold hover:pl-4 hover:bg-white/5"
+                        )}
+                      >
+                        <span>{item.label}</span>
+                        {active ? (
+                          <span className="w-2 h-2 rounded-full bg-gold shadow-gold" />
+                        ) : (
+                          <ArrowRight className="w-4 h-4 text-ivory/30" />
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            {/* Mobile Action Center & Quick Contact */}
+            <div className="flex flex-col gap-3 pt-6 border-t border-white/10 shrink-0">
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMobileOpen(false);
+                  openBookingModal();
+                }}
+                className="w-full flex items-center justify-center gap-2.5 py-4 bg-gold text-black font-sans font-bold text-base rounded-2xl shadow-gold hover:bg-gold-light active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
+              >
+                <CalendarDays className="w-5 h-5 text-black" />
+                <span>Book Your Stay</span>
+              </button>
+
+              <a
+                href={`tel:${hotel.contact.phone[0]}`}
+                className="w-full flex items-center justify-center gap-2 py-3.5 border border-white/20 text-ivory font-sans font-medium text-sm rounded-2xl hover:bg-white/5 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+              >
+                <Phone className="w-4 h-4 text-gold" />
+                <span>Call: {hotel.contact.phone[0]}</span>
+              </a>
+
+              <p className="text-[11px] font-sans text-center text-ivory/40 mt-1">
+                Christian Colony, Near Subjail, Kadiri • 24/7 Front Desk
+              </p>
+            </div>
+          </motion.div>
         )}
-      >
-        {/* Drawer Top Bar with Brand and Explicit Close Button */}
-        <div className="flex items-center justify-between pb-3 border-b border-white/10 shrink-0">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-gold" />
-            <span className="text-xs font-sans font-bold tracking-widest uppercase text-gold">
-              VIKRAM BLISS INN
-            </span>
-          </div>
-          <button
-            type="button"
-            onClick={() => setIsMobileOpen(false)}
-            className="h-11 w-11 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl bg-white/10 text-ivory hover:text-gold hover:bg-white/15 active:scale-95 transition-all cursor-pointer"
-            aria-label="Close navigation menu"
-          >
-            <X className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Menu Navigation Links */}
-        <div className="flex flex-col gap-1 overflow-y-auto my-auto py-3">
-          <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-gold/80 mb-2 px-3">
-            Navigation
-          </p>
-
-          <ul className="flex flex-col divide-y divide-white/5">
-            {navItems.map((item) => {
-              const active = isItemActive(item);
-              return (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setIsMobileOpen(false)}
-                    aria-current={active ? "page" : undefined}
-                    className={cn(
-                      "flex items-center justify-between py-3.5 px-3 rounded-xl font-serif text-2xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold",
-                      active
-                        ? "text-gold font-bold bg-white/5 pl-4"
-                        : "text-ivory/80 hover:text-gold hover:pl-4 hover:bg-white/5"
-                    )}
-                  >
-                    <span>{item.label}</span>
-                    {active ? (
-                      <span className="w-2 h-2 rounded-full bg-gold shadow-gold" />
-                    ) : (
-                      <ArrowRight className="w-4 h-4 text-ivory/30" />
-                    )}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
-        {/* Mobile Action Center & Quick Contact */}
-        <div className="flex flex-col gap-3 pt-6 border-t border-white/10 shrink-0">
-          <button
-            type="button"
-            onClick={() => {
-              setIsMobileOpen(false);
-              openBookingModal();
-            }}
-            className="w-full flex items-center justify-center gap-2.5 py-4 bg-gold text-black font-sans font-bold text-base rounded-2xl shadow-gold hover:bg-gold-light transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer"
-          >
-            <CalendarDays className="w-5 h-5 text-black" />
-            <span>Book Your Stay</span>
-          </button>
-
-          <a
-            href={`tel:${hotel.contact.phone[0]}`}
-            className="w-full flex items-center justify-center gap-2 py-3.5 border border-white/20 text-ivory font-sans font-medium text-sm rounded-2xl hover:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-          >
-            <Phone className="w-4 h-4 text-gold" />
-            <span>Call: {hotel.contact.phone[0]}</span>
-          </a>
-
-          <p className="text-[11px] font-sans text-center text-ivory/40 mt-1">
-            Christian Colony, Near Subjail, Kadiri • 24/7 Front Desk
-          </p>
-        </div>
-      </div>
+      </AnimatePresence>
     </>
   );
 }
