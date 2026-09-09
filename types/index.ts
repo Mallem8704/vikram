@@ -14,16 +14,17 @@ export interface Room {
   longDescription: string;
   pricePerNight: number;
   originalPrice?: number;
-  maxOccupancy: number;
-  sizeSqFt: number;
-  bedType: string;
-  features: RoomFeature[];
+  maxOccupancy?: number;
+  sizeSqFt?: number;
+  bedType?: string;
+  features?: RoomFeature[];
   amenities: string[];
   images: RoomImage[];
   badge?: string;
   isAC: boolean;
   cardFeatures?: string[];
   cardCta?: string;
+  importantInfo?: string[];
 }
 
 export interface RoomImage {
