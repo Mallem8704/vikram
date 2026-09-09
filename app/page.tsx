@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Amenities from "@/components/Amenities";
-import RoomGrid from "@/components/RoomGrid";
+import RoomsSection from "@/components/RoomsSection";
 import FunctionHall from "@/components/FunctionHall";
 import Gallery from "@/components/Gallery";
 import LocationSection from "@/components/LocationSection";
 import BookingCTA from "@/components/BookingCTA";
-import SectionHeading from "@/components/SectionHeading";
-import { rooms } from "@/lib/data/rooms";
-import Link from "next/link";
-import { ArrowRight, Sparkles, ShieldCheck, Heart, Moon } from "lucide-react";
+import { Sparkles, ShieldCheck, Heart, Moon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Vikram Bliss Inn | Premium Hotel in Kadiri, Andhra Pradesh",
@@ -46,27 +43,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Rooms Preview with Real Photographs */}
-      <section className="section-padding bg-ivory">
-        <div className="section-container">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-            <SectionHeading
-              eyebrow="Accommodation"
-              title="Our Rooms"
-              subtitle="Choose from our well-designed rooms for a comfortable and relaxing stay in Kadiri."
-              align="left"
-              theme="light"
-            />
-            <Link
-              href="/rooms"
-              className="flex items-center gap-2 text-sm font-sans font-semibold text-gold-dark hover:text-gold transition-colors shrink-0"
-            >
-              View All Rooms <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-          <RoomGrid rooms={rooms} />
-        </div>
-      </section>
+      {/* Rooms Section with 3 Premium Cards */}
+      <RoomsSection />
 
       {/* Function Hall Section */}
       <FunctionHall />

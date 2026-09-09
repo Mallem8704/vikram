@@ -22,6 +22,8 @@ export interface Room {
   images: RoomImage[];
   badge?: string;
   isAC: boolean;
+  cardFeatures?: string[];
+  cardCta?: string;
 }
 
 export interface RoomImage {
