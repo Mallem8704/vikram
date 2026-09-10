@@ -73,7 +73,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className={`object-cover object-[70%_center] md:object-[80%_center] lg:object-[right_center] transition-opacity duration-1000 ${
+          className={`object-cover object-[48%_center] sm:object-[65%_center] md:object-[75%_center] lg:object-[right_center] transition-opacity duration-1000 ${
             isVideoLoaded && !shouldReduceMotion ? "opacity-0" : "opacity-100"
           }`}
         />
@@ -88,7 +88,7 @@ export default function Hero() {
             playsInline
             poster={hotelImages.exterior.hero}
             onLoadedData={() => setIsVideoLoaded(true)}
-            className={`absolute inset-0 w-full h-full object-cover object-[70%_center] md:object-[80%_center] lg:object-[right_center] transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full h-full object-cover object-[48%_center] sm:object-[65%_center] md:object-[75%_center] lg:object-[right_center] transition-opacity duration-1000 ${
               isVideoLoaded ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -102,15 +102,15 @@ export default function Hero() {
         {/* Tablet Gradient: Smooth left-to-right fade */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 via-55% to-black/35 hidden sm:block lg:hidden pointer-events-none" />
 
-        {/* Mobile Gradient: Top-to-bottom dark layer for readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black/60 sm:hidden pointer-events-none" />
+        {/* Mobile Gradient: Balanced cinematic overlay keeping the live illuminated building vibrant */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 via-50% to-black/25 sm:hidden pointer-events-none" />
 
         {/* Subtle bottom fade to seamlessly blend into the next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none" />
       </div>
 
       {/* ──────────────── Content Container ──────────────── */}
-      <div className="relative z-10 section-container w-full pt-28 pb-16 md:pt-32 md:pb-20">
+      <div className="relative z-10 section-container w-full pt-24 pb-20 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Occupies approx 40% (5 of 12 cols on desktop) */}
           <div className="lg:col-span-6 xl:col-span-5 flex flex-col items-start text-left">
@@ -148,7 +148,7 @@ export default function Hero() {
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.2, ease }}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl text-ivory font-bold leading-[1.08] mb-4 sm:mb-5"
+              className="font-serif text-3xl sm:text-5xl md:text-6xl text-ivory font-bold leading-[1.1] sm:leading-[1.08] mb-4 sm:mb-5"
             >
               Experience Comfort, <br />
               <span className="text-gold italic font-normal">Embrace Bliss</span>
@@ -234,7 +234,7 @@ export default function Hero() {
 
       {/* ──────────────── Floating Live Video & Audio Controls (Bottom-Right) ──────────────── */}
       {!shouldReduceMotion && (
-        <div className="absolute bottom-6 right-6 z-20 hidden sm:flex items-center gap-2 bg-black/75 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full shadow-lg">
+        <div className="absolute bottom-20 right-4 sm:bottom-6 sm:right-6 z-20 flex items-center gap-2 bg-black/80 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full shadow-lg">
           {/* Sound Toggle Button */}
           <button
             type="button"

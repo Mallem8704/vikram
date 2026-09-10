@@ -106,7 +106,7 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isTransparent
-            ? "bg-transparent py-4 md:py-5"
+            ? "bg-gradient-to-b from-black/90 via-black/50 to-transparent md:bg-transparent py-3.5 md:py-5"
             : "bg-black/95 backdrop-blur-md shadow-card-dark border-b border-white/10 py-3 md:py-3.5"
         )}
       >
@@ -220,28 +220,10 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden fixed inset-0 z-40 bg-black/98 backdrop-blur-2xl flex flex-col justify-between pt-20 pb-8 px-5 sm:px-6 overflow-y-auto"
+            className="lg:hidden fixed inset-0 z-40 bg-[#0A0A0A] flex flex-col justify-between pt-24 pb-8 px-5 sm:px-6 overflow-y-auto"
           >
-            {/* Drawer Top Bar with Brand and Explicit Close Button */}
-            <div className="flex items-center justify-between pb-3 border-b border-white/10 shrink-0">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gold" />
-                <span className="text-xs font-sans font-bold tracking-widest uppercase text-gold">
-                  VIKRAM BLISS INN
-                </span>
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsMobileOpen(false)}
-                className="h-11 w-11 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl bg-white/10 text-ivory hover:text-gold hover:bg-white/15 active:scale-95 transition-all cursor-pointer"
-                aria-label="Close navigation menu"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
             {/* Menu Navigation Links */}
-            <div className="flex flex-col gap-1 overflow-y-auto my-auto py-3">
+            <div className="flex flex-col gap-1 overflow-y-auto my-auto py-2">
               <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-gold/80 mb-2 px-3">
                 Navigation
               </p>
